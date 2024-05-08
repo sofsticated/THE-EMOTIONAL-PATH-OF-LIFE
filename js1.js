@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Função para trocar as imagens e mostrar o botão com fade in
     function changeImageAndShowButton() {
-        image2.classList.remove('hidden');
         startButton.classList.remove('hidden'); // Removendo a classe hidden para tornar o botão visível
 
         // Adicionando um pequeno atraso para permitir que o navegador aplique a transição de classe
