@@ -194,16 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    for (let i = 1; i < 3; i++) {
-        const cenario = new Image();
-        cenario.id = 'cenario';
-        const caminhoCenario = 'img/desenhos/Frame 1_' + i + '.png';
-        cenario.src = caminhoCenario;
-        cenario.style.display = 'none';
-        slide.appendChild(cenario);
-        cenarios.push(cenario);
-    }
-
     for (let i = 1; i < 8; i++) {
         if (i < 8) {
             const cenario = new Image();
@@ -637,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cenarios[17].style.display = 'none';
                 contador = 0;
             }
-        } else if (indiceAtual == 15 && event.clientX >= 1100 && event.clientX <= window.innerWidth && event.clientY >= 0 && event.clientY <= 550) {
+        } else if (indiceAtual == 15 && event.clientX >= 300 && event.clientX <= 750 && event.clientY >= 400 && event.clientY <= 650) {
             contador++;
             if (contador == 1) {
                 cenarios[18].style.position = 'absolute';
@@ -649,7 +639,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cenarios[18].style.display = 'none';
                 contador = 0;
             }
-        } else if (indiceAtual == 15 && event.clientX >= 300 && event.clientX <= 750 && event.clientY >= 400 && event.clientY <= 650) {
+        } else if (indiceAtual == 15 && event.clientX >= 1100 && event.clientX <= window.innerWidth && event.clientY >= 0 && event.clientY <= 550) {
             contador++;
             if (contador == 1) {
                 cenarios[19].style.position = 'absolute';
@@ -1110,6 +1100,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
 
