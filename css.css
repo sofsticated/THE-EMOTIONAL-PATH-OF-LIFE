@@ -1,0 +1,118 @@
+/*SLIDE*/
+#slide {
+    margin: 0;
+    width: 101.5%;
+    height: 101%;
+    overflow: hidden;
+    position: relative;
+}
+
+#slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////TEXTO//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+body {
+    font-family: 'Georgia Pro', 'Georgia', serif;
+    overflow: hidden;
+}
+
+/*body .bichos {
+    position: relative;
+    top: 215px;
+}
+
+body .toupeira {
+    position: relative;
+    left: 200px;
+    width: 800px;
+    height: 575px;
+}
+
+body .toupeira p {
+    position: relative;
+    top: 25px;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 35%;
+    width: 550px;
+}
+
+body .toupeira #imgMole {
+    position: relative;
+    left: 750px;
+    bottom: 340px;
+}
+
+body .raposa {
+    position: relative;
+    left: 200px;
+    width: 800px;
+    height: 575px;
+}
+
+body .raposa p {
+    position: relative;
+    top: 25px;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 35%;
+    width: 550px;
+}
+
+body .raposa #imgFox {
+    position: relative;
+    left: 750px;
+    bottom: 340px;
+}
+
+body .cavalo {
+    position: relative;
+    left: 200px;
+    width: 800px;
+    height: 595px;
+}
+
+body .cavalo p {
+    position: relative;
+    top: 25px;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 35%;
+    width: 550px;
+}
+
+body .cavalo #imgHorse {
+    position: relative;
+    left: 750px;
+    bottom: 340px;
+}*/
+
+
+
+.oscillate {
+    position: absolute;
+    bottom: -328px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: oscillate 2s ease-in-out infinite alternate;
+}
+
+@keyframes oscillate {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, -50%) translateY(4px) translateX(4px);
+    }
+}
+
+.falas {
+    display: none;
+}
