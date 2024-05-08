@@ -1,13 +1,11 @@
 // Tela inicial----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-    const image1 = document.getElementById('image1');
     const image2 = document.getElementById('image2');
     const startButton = document.getElementById('startButton');
     const container = document.querySelector('.container');
 
     // Função para trocar as imagens e mostrar o botão com fade in
     function changeImageAndShowButton() {
-        image1.classList.add('hidden');
         image2.classList.remove('hidden');
         startButton.classList.remove('hidden'); // Removendo a classe hidden para tornar o botão visível
 
