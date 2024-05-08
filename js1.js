@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startButton.addEventListener('click', function () {
         container.classList.add('fade-out'); // Adiciona a classe para fazer a transição suave de fade out
         setTimeout(() => {
-            window.location.href = 'index.html'; // Redireciona para a próxima página após a transição
+            window.location.href = 'interacao.html'; // Redireciona para a próxima página após a transição
         }, 1000); // Aguarda 1 segundo para garantir que a transição de fade out seja concluída
     });
 });
