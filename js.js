@@ -1266,7 +1266,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    slide.addEventListener('DOMContentLoaded', function () {
+ /*   slide.addEventListener('DOMContentLoaded', function () {
     if (indiceAtual == 2) {
         console.log("indiceAtual é 2.");
 
@@ -1291,6 +1291,37 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.log("indiceAtual não é 2.");
     }
-    });
+    }); */
+
+
+    function verificarIndiceEExibirFalas() {
+        if (indiceAtual == 2) {
+            console.log("indiceAtual é 2.");
+    
+            if (falas.length > 0) {
+                falas[0].style.position = 'absolute';
+                falas[0].style.top = '0%';
+                falas[0].style.left = '0%';
+                falas[0].style.display = 'block';
+    
+                setTimeout(function () {
+                    falas[0].classList.add('visivel');
+                    console.log("Classe 'visivel' adicionada ao elemento falas[0].");
+                }, 3000);
+    
+                setTimeout(function () {
+                    falas[0].classList.remove('visivel');
+                    console.log("Classe 'visivel' removida do elemento falas[0].");
+                }, 5000);
+            } else {
+                console.log("Não há elementos em falas.");
+            }
+        } else {
+            console.log("indiceAtual não é 2.");
+        }
+    }
+    
+    // Chame a função diretamente em vez de aguardar o evento 'DOMContentLoaded'
+    verificarIndiceEExibirFalas();
 });
 
