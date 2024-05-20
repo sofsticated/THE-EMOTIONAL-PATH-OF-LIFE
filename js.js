@@ -563,13 +563,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.clientX <= window.innerWidth / 6) {
             voltaImagemAudio();
             if (indiceAtual == 1) { vento.play(); }
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < cenarios.length; i++) {
                 cenarios[i].style.display = 'none';
             }
         } else if (event.clientX >= 5 * window.innerWidth / 6) {
             proximaImagemAudio();
             if (indiceAtual == 1) { vento.play(); }
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < cenarios.length; i++) {
                 cenarios[i].style.display = 'none';
             }
         }
@@ -929,22 +929,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     document.addEventListener('mousemove', function (event) {
-        if (indiceAtual == 2) {
-            falas[0].style.position = 'absolute';
-            falas[0].style.top = 0 + '%';
-            falas[0].style.left = 0 + '%';
-            falas[0].style.display = 'block';
+        if (indiceAtual == 2 && event.clientX <= 590 && event.clientX >= 490 && event.clientY >= 430 && event.clientY <= 550) {
+            elementosToupeira[0].style.width = ((window.innerWidth + 7) * 1914) / 1912 + 'px';
+            elementosToupeira[0].style.height = ((window.innerHeight + 28) * 865) / 863 + 'px';
+            elementosToupeira[0].style.position = 'absolute';
+            elementosToupeira[0].style.top = 0 + '%';
+            elementosToupeira[0].style.left = 0 + '%';
+            elementosToupeira[0].style.display = 'block';
 
-            if (event.clientX <= 590 && event.clientX >= 490 && event.clientY >= 430 && event.clientY <= 550) {
-                elementosToupeira[0].style.width = ((window.innerWidth + 7) * 1914) / 1912 + 'px';
-                elementosToupeira[0].style.height = ((window.innerHeight + 28) * 865) / 863 + 'px';
-                elementosToupeira[0].style.position = 'absolute';
-                elementosToupeira[0].style.top = 0 + '%';
-                elementosToupeira[0].style.left = 0 + '%';
-                elementosToupeira[0].style.display = 'block';
+            slide.insertBefore(elementosToupeira[0]);
 
-                slide.insertBefore(elementosToupeira[0]);
-            }
         } else if (indiceAtual == 3 && event.clientX <= 970 && event.clientX >= 800 && event.clientY >= 250 && event.clientY <= 450) {
             elementosToupeira[1].style.width = ((window.innerWidth + 7) * 1914) / 1912 + 'px';
             elementosToupeira[1].style.height = ((window.innerHeight + 28) * 865) / 863 + 'px';
@@ -1269,6 +1263,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 elementosCavalo[i].style.display = 'none';
             }
         }
+    });
+
+
+    slide.addEventListener('DOMContentLoaded', function () {
+    if (indiceAtual == 2) {
+        console.log("indiceAtual é 2.");
+
+        if (falas.length > 0) {
+            falas[0].style.position = 'absolute';
+            falas[0].style.top = '0%';
+            falas[0].style.left = '0%';
+            falas[0].style.display = 'block';
+
+            setTimeout(function () {
+                falas[0].classList.add('visivel');
+                console.log("Classe 'visivel' adicionada ao elemento falas[0].");
+            }, 3000);
+
+            setTimeout(function () {
+                falas[0].classList.remove('visivel');
+                console.log("Classe 'visivel' removida do elemento falas[0].");
+            }, 5000);
+        } else {
+            console.log("Não há elementos em falas.");
+        }
+    } else {
+        console.log("indiceAtual não é 2.");
+    }
     });
 });
 
