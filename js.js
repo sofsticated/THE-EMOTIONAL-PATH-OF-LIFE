@@ -1,14 +1,12 @@
+//comentario aleatorio
+
 document.addEventListener('DOMContentLoaded', function () {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////// VARIÁVEIS ////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     const imagens = [];                                       //imagens principais
     const fundos = [];                                        //fundos de cor
     const elementosToupeira = [];                             //toupeira
     const elementosRaposa = [];                               //raposa
     const elementosCavalo = [];//cavalo
     const cenarios = [];                                      //cenarios imaginados
-    const falas = [];                                         //falas imgs
 
     const audios = [];                                        //audios
 
@@ -20,10 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let indiceAtual = 0;
     let indiceAudio = -2;
     let contador = 0;
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////// IMAGENS //////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     for (let i = 1; i <= 20; i++) {
         const imagem = new Image();
@@ -309,170 +303,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.appendChild(cenario);
         cenarios.push(cenario);
     }
-    //------------------------------------------------------------------falas
-    for (let i = 1; i < 3; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 1_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 3; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 2_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 7; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 3_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 4_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 5; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 5_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 3; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 6_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 7_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 9_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 5; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 10_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 11_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 13_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 3; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 14_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 3; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 15_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 7; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 16_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 2; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 17_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    for (let i = 1; i < 8; i++) {
-        const fala = new Image();
-        fala.class = 'falas';
-        const caminhoFala = 'img/falas/Frame 18_' + i + '.png';
-        fala.src = caminhoFala;
-        fala.style.display = 'none';
-        slide.appendChild(fala);
-        falas.push(fala);
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////// SONS ////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     for (let i = 3; i < 21; i++) {
         const audio = new Audio();
@@ -515,10 +345,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.appendChild(audio);
         audios.push(audio);
     }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////// FUNCOES /////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function voltaImagemAudio() {
         if (indiceAtual != 0) {
@@ -585,20 +411,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        if (indiceAtual == 2) {
-
-            if (event.clientX <= 590 && event.clientX >= 490 && event.clientY >= 430 && event.clientY <= 550) {
-                contador++;
-                if (contador == 1) {
-                    cenarios[0].style.position = 'absolute';
-                    cenarios[0].style.top = '0';
-                    cenarios[0].style.left = '0';
-                    cenarios[0].style.display = 'block';
-                    sobre.play();
-                } else if (contador == 2) {
-                    cenarios[0].style.display = 'none';
-                    contador = 0;
-                }
+        if (indiceAtual == 2 && event.clientX <= 590 && event.clientX >= 490 && event.clientY >= 430 && event.clientY <= 550) {
+            contador++;
+            if (contador == 1) {
+                cenarios[0].style.position = 'absolute';
+                cenarios[0].style.top = '0';
+                cenarios[0].style.left = '0';
+                cenarios[0].style.display = 'block';
+                sobre.play();
+            } else if (contador == 2) {
+                cenarios[0].style.display = 'none';
+                contador = 0;
             }
         } else if (indiceAtual == 3 && event.clientX <= 970 && event.clientX >= 800 && event.clientY >= 250 && event.clientY <= 450) {
             contador++;
@@ -1278,11 +1101,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
-
-
-
-
-
 });
 
