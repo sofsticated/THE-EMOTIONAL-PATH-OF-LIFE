@@ -1294,8 +1294,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }); */
 
 
-    function verificarIndiceEExibirFalas() {
-        if (indiceAtual == 2) {
+   /* function verificarIndiceEExibirFalas() {
+        if (indiceAtual == ) {
             console.log("indiceAtual é 2.");
     
             if (falas.length > 0) {
@@ -1323,5 +1323,45 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Chame a função diretamente em vez de aguardar o evento 'DOMContentLoaded'
     verificarIndiceEExibirFalas();
+    */
+
+// Função para verificar o índice e exibir as falas
+function verificarIndiceEExibirFalas() {
+    console.log("Função verificarIndiceEExibirFalas chamada.");
+    console.log("Valor de indiceAtual:", indiceAtual);
+    console.log("Número de elementos em falas:", falas.length);
+
+    if (indiceAtual === 2) {
+        console.log("indiceAtual é 2.");
+
+        if (falas.length > 0) {
+            let primeiraFala = falas[0];
+            console.log("Elemento falas[0] encontrado:", primeiraFala);
+
+            primeiraFala.style.position = 'absolute';
+            primeiraFala.style.top = '0%';
+            primeiraFala.style.left = '0%';
+            primeiraFala.style.display = 'block';
+            console.log("Estilo aplicado ao elemento falas[0].");
+
+            setTimeout(function () {
+                primeiraFala.classList.add('visivel');
+                console.log("Classe 'visivel' adicionada ao elemento falas[0].");
+            }, 3000);
+
+            setTimeout(function () {
+                primeiraFala.classList.remove('visivel');
+                console.log("Classe 'visivel' removida do elemento falas[0].");
+            }, 5000);
+        } else {
+            console.log("Não há elementos em falas.");
+        }
+    } else {
+        console.log("indiceAtual não é 2.");
+    }
+}
+// Chame a função após garantir que `indiceAtual` e `falas` estão definidos
+verificarIndiceEExibirFalas();
+
 });
 
