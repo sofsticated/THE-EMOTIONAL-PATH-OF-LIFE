@@ -1,3 +1,5 @@
+//comentario aleatorio
+
 document.addEventListener('DOMContentLoaded', function () {
     const imagens = [];                                       //imagens principais
     const fundos = [];                                        //fundos de cor
