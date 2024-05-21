@@ -1,5 +1,3 @@
-//comentario aleatorio
-
 document.addEventListener('DOMContentLoaded', function () {
     const imagens = [];                                       //imagens principais
     const fundos = [];                                        //fundos de cor
@@ -1266,60 +1264,149 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-let intervalID; // Variável para armazenar o ID do intervalo
-let falaExibida = false; // Flag para controlar se a fala já foi exibida
-
-function verificarIndiceEExibirFalas() {
-    console.log("Função verificarIndiceEExibirFalas chamada.");
-    console.log("Valor de indiceAtual:", indiceAtual);
-    console.log("Número de elementos em falas:", falas.length);
-
-    if (indiceAtual === 2 && !falaExibida) { // Verifica se o índice é 2 e se a fala ainda não foi exibida
-        console.log("indiceAtual é 2.");
-
-        if (falas.length > 0) {
-            let primeiraFala = falas[0];
-            console.log("Elemento falas[0] encontrado:", primeiraFala);
-
-            // Inicialmente, esconder todas as falas
-            falas.forEach(fala => {
-                fala.style.display = 'none';
-            });
-
-            // Configura a primeira fala
-            primeiraFala.style.position = 'absolute';
-            primeiraFala.style.top = '0%';
-            primeiraFala.style.left = '0%';
-            primeiraFala.style.display = 'block';
-            console.log("Estilo aplicado ao elemento falas[0].");
-
-            setTimeout(function () {
-                primeiraFala.classList.add('visivel');
-                console.log("Classe 'visivel' adicionada ao elemento falas[0].");
-
-                // Remover fala após 2 segundos
+    /*let intervalID; // Variável para armazenar o ID do intervalo
+    let falaExibida = false; // Flag para controlar se a fala já foi exibida
+    
+    function verificarIndiceEExibirFalas() {
+        console.log("Função verificarIndiceEExibirFalas chamada.");
+        console.log("Valor de indiceAtual:", indiceAtual);
+        console.log("Número de elementos em falas:", falas.length);
+    
+        if (indiceAtual === 2 && !falaExibida) { // Verifica se o índice é 2 e se a fala ainda não foi exibida
+            console.log("indiceAtual é 2.");
+    
+            if (falas.length > 0) {
+                let primeiraFala = falas[0];
+                console.log("Elemento falas[0] encontrado:", primeiraFala);
+    
+                // Inicialmente, esconder todas as falas
+                falas.forEach(fala => {
+                    fala.style.display = 'none';
+                });
+    
+                // Configura a primeira fala
+                primeiraFala.style.position = 'absolute';
+                primeiraFala.style.top = '0%';
+                primeiraFala.style.left = '0%';
+                primeiraFala.style.display = 'block';
+                console.log("Estilo aplicado ao elemento falas[0].");
+    
                 setTimeout(function () {
-                    primeiraFala.style.display = 'none';
-                    console.log("Elemento falas[0] removido do ecrã.");
-                }, 2000);
-
-                falaExibida = true; // Define a flag como true após exibir a fala
-            }, 3000);
-        } else {
-            console.log("Não há elementos em falas.");
+                    primeiraFala.classList.add('visivel');
+                    console.log("Classe 'visivel' adicionada ao elemento falas[0].");
+    
+                    // Remover fala após 2 segundos
+                    setTimeout(function () {
+                        primeiraFala.style.display = 'none';
+                        console.log("Elemento falas[0] removido do ecrã.");
+                    }, 2000);
+    
+                    falaExibida = true; // Define a flag como true após exibir a fala
+                }, 3000);
+    
+    
+            } else {
+                console.log("Não há elementos em falas.");
+            }
+        } else if (indiceAtual !== 2) { // Se o índice não for 2, redefine a flag para false
+            falaExibida = false;
+            console.log("indiceAtual não é 2. Retomando loop de verificação.");
+            clearInterval(intervalID); // Pausa o loop de verificação
+            intervalID = setInterval(verificarIndiceEExibirFalas, 1000); // Retoma o loop
         }
-    } else if (indiceAtual !== 2) { // Se o índice não for 2, redefine a flag para false
-        falaExibida = false;
-        console.log("indiceAtual não é 2. Retomando loop de verificação.");
-        clearInterval(intervalID); // Pausa o loop de verificação
-        intervalID = setInterval(verificarIndiceEExibirFalas, 1000); // Retoma o loop
     }
-}
+    
+    // Iniciar loop de verificação
+    intervalID = setInterval(verificarIndiceEExibirFalas, 1000);*/
 
-// Iniciar loop de verificação
-intervalID = setInterval(verificarIndiceEExibirFalas, 1000);
+    let intervalID; // Variável para armazenar o ID do intervalo
+    let falaExibida = [false, false, false, false]; // Flags para controlar se a fala já foi exibida para cada índice
 
+    // Array de arrays de objetos de falas, cada objeto contém a fala, tempo de início e tempo de desaparecimento
+    let falasPorIndice = [
+        {},
+        {},
+        [
+            { fala: falas[0], inicio: 1000, duracao: 2000 }, // Fala 0 para indiceAtual = 0
+            { fala: falas[1], inicio: 4000, duracao: 2500 }  // Fala 1 para indiceAtual = 0
+        ],
+        [
+            { fala: falas[2], inicio: 2000, duracao: 2500 }  // Fala 2 para indiceAtual = 1
+        ],
+        [
+            { fala: falas[3], inicio: 3000, duracao: 3000 }, // Fala 3 para indiceAtual = 2
+            { fala: falas[4], inicio: 6000, duracao: 4000 }, // Fala 4 para indiceAtual = 2
+            { fala: falas[5], inicio: 1000, duracao: 3500 }  // Fala 5 para indiceAtual = 2
+        ],
+        [
+            { fala: falas[6], inicio: 5000, duracao: 4000 }  // Fala 6 para indiceAtual = 3
+        ]
+    ];
 
+    function exibirFalaComDelay(falaObj, index, indiceAtual) {
+        let { fala, inicio, duracao } = falaObj;
+
+        console.log(`Elemento falas[${indiceAtual}][${index}] encontrado:`, fala);
+
+        // Configura a fala atual
+        fala.style.position = 'absolute';
+        fala.style.top = '0%';
+        fala.style.left = '0%';
+        fala.style.display = 'block';
+        console.log(`Estilo aplicado ao elemento falas[${indiceAtual}][${index}].`);
+
+        setTimeout(function () {
+            fala.classList.add('visivel');
+            console.log(`Classe 'visivel' adicionada ao elemento falas[${indiceAtual}][${index}].`);
+
+            // Remover fala após sua duração
+            setTimeout(function () {
+                fala.style.display = 'none';
+                console.log(`Elemento falas[${indiceAtual}][${index}] removido do ecrã.`);
+
+                if (index === falasPorIndice[indiceAtual].length - 1) {
+                    falaExibida[indiceAtual] = true; // Define a flag como true após exibir todas as falas
+                }
+            }, duracao);
+        }, inicio); // Adiciona um atraso para exibir cada fala
+    }
+
+    function verificarIndiceEExibirFalas() {
+        console.log("Função verificarIndiceEExibirFalas chamada.");
+        console.log("Valor de indiceAtual:", indiceAtual);
+        console.log("Número de elementos em falas:", falas.length);
+    
+        if (indiceAtual >= 2 && indiceAtual <= 5 && !falaExibida[indiceAtual]) { // Verifica se o índice está no intervalo e se a fala ainda não foi exibida
+            console.log(`indiceAtual é ${indiceAtual}.`);
+    
+            if (falas.length > 0) {
+                let falasAtuais = falasPorIndice[indiceAtual];
+    
+                // Inicialmente, esconder todas as falas
+                falas.forEach(fala => {
+                    fala.style.display = 'none';
+                });
+    
+                // Iterar sobre as falas atuais
+                falasAtuais.forEach((falaObj, index) => {
+                    setTimeout(() => {
+                        exibirFalaComDelay(falaObj, index, indiceAtual);
+                    }, falaObj.inicio); // Exibe a fala com o atraso definido pelo tempo de início
+                });
+    
+            } else {
+                console.log("Não há elementos em falas.");
+            }
+        } else if (indiceAtual < 0 || indiceAtual > 3 || falaExibida[indiceAtual]) {
+            // Se o índice for fora do intervalo [0, 3] ou a fala já foi exibida
+            console.log("Indice fora do intervalo ou fala já exibida. Retomando loop de verificação.");
+            clearInterval(intervalID); // Pausa o loop de verificação
+            intervalID = setInterval(verificarIndiceEExibirFalas, 1000); // Retoma o loop
+        }
+    }
+    
+ // Iniciar loop de verificação
+ intervalID = setInterval(verificarIndiceEExibirFalas, 1000);
 
 });
 
