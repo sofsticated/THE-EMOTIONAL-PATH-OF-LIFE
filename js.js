@@ -1364,13 +1364,14 @@ document.addEventListener('DOMContentLoaded', function () {
 verificarIndiceEExibirFalas(); */
 
 let intervalID; // Variável para armazenar o ID do intervalo
+let falaExibida = false; // Flag para controlar se a fala já foi exibida
 
 function verificarIndiceEExibirFalas() {
     console.log("Função verificarIndiceEExibirFalas chamada.");
     console.log("Valor de indiceAtual:", indiceAtual);
     console.log("Número de elementos em falas:", falas.length);
 
-    if (indiceAtual === 2) {
+    if (indiceAtual === 2 && !falaExibida) { // Verifica se o índice é 2 e se a fala ainda não foi exibida
         console.log("indiceAtual é 2.");
 
         if (falas.length > 0) {
@@ -1398,11 +1399,14 @@ function verificarIndiceEExibirFalas() {
                     primeiraFala.style.display = 'none';
                     console.log("Elemento falas[0] removido do ecrã.");
                 }, 2000);
+
+                falaExibida = true; // Define a flag como true após exibir a fala
             }, 3000);
         } else {
             console.log("Não há elementos em falas.");
         }
-    } else {
+    } else if (indiceAtual !== 2) { // Se o índice não for 2, redefine a flag para false
+        falaExibida = false;
         console.log("indiceAtual não é 2. Retomando loop de verificação.");
         clearInterval(intervalID); // Pausa o loop de verificação
         intervalID = setInterval(verificarIndiceEExibirFalas, 1000); // Retoma o loop
@@ -1411,6 +1415,7 @@ function verificarIndiceEExibirFalas() {
 
 // Iniciar loop de verificação
 intervalID = setInterval(verificarIndiceEExibirFalas, 1000);
+
 
 
 });
