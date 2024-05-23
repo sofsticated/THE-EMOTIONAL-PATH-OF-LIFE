@@ -1320,7 +1320,7 @@ document.addEventListener('DOMContentLoaded', function () {
     intervalID = setInterval(verificarIndiceEExibirFalas, 1000);*/
 
     let intervalID; // Variável para armazenar o ID do intervalo
-    let falaExibida = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]; // Flags para controlar se a fala já foi exibida para cada índice
+    let falaExibida = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]; // Flags para controlar se a fala já foi exibida para cada índice
     
     // Array de arrays de objetos de falas, cada objeto contém a fala, tempo de início e tempo de desaparecimento
     let falasPorIndice = [
@@ -1330,48 +1330,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Falas para indiceAtual = 2----------------------------------------------------------
         [
-            { fala: falas[0], inicio: 1000, duracao: 2000 }, 
-            { fala: falas[1], inicio: 4000, duracao: 2600 }, 
+            { fala: falas[0], inicio: 1500, duracao: 2000 }, 
+            { fala: falas[1], inicio: 4000, duracao: 3400 }, 
         ],
 
         // Falas para indiceAtual = 3---------------------------------------------------------- 
         [
-            { fala: falas[2], inicio: 1000, duracao: 2500 },  // Fala 2 para indiceAtual = 3
-            { fala: falas[3], inicio: 3000, duracao: 3000 }, 
+            { fala: falas[2], inicio: 700, duracao: 2500 },  
+            { fala: falas[3], inicio: 4000, duracao: 2000 }, 
         ],
 
         // Falas para indiceAtual = 4----------------------------------------------------------
         [
-            { fala: falas[4], inicio: 6000, duracao: 4000 },
-            { fala: falas[5], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[6], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[7], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[4], inicio: 0, duracao: 3500 },
+            { fala: falas[5], inicio: 4000, duracao: 1000 }, 
+            { fala: falas[6], inicio: 5200, duracao: 2500 }, 
+            { fala: falas[7], inicio: 7900, duracao: 5000 }, 
+            { fala: falas[8], inicio: 12900, duracao: 2100 },  
+            { fala: falas[9], inicio: 15500, duracao: 2000 }, 
         ],
 
         // Falas para indiceAtual = 5----------------------------------------------------------
         [
-            { fala: falas[8], inicio: 5000, duracao: 4000 },  // Fala 6 para indiceAtual = 5
-            { fala: falas[9], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[10], inicio: 1000, duracao: 2000 },  
+            { fala: falas[11], inicio: 2000, duracao: 5000 }, //????
         ],
 
         // Falas para indiceAtual = 6----------------------------------------------------------
         [
-            { fala: falas[10], inicio: 6000, duracao: 4000 },
-            { fala: falas[11], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[12], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[13], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[12], inicio: 500, duracao: 7000 },
+            { fala: falas[13], inicio: 8000, duracao: 7000 }, 
+            { fala: falas[14], inicio: 16000, duracao: 3000 }, 
+            { fala: falas[15], inicio: 20000, duracao: 2000 }, 
             
         ],
         
         // Falas para indiceAtual = 7----------------------------------------------------------
         [
-            { fala: falas[14], inicio: 6000, duracao: 4000 },
-            { fala: falas[15], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[16], inicio: 6000, duracao: 4000 },
+            { fala: falas[17], inicio: 1000, duracao: 3500 }, 
         ],
         
         // Falas para indiceAtual = 8----------------------------------------------------------
         [
-            { fala: falas[16], inicio: 6000, duracao: 4000 },
+            { fala: falas[18], inicio: 6000, duracao: 4000 },
         ],
 
         [],
@@ -1379,51 +1381,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Falas para indiceAtual = 10----------------------------------------------------------
         [
-            { fala: falas[17], inicio: 6000, duracao: 4000 },
+            { fala: falas[19], inicio: 6000, duracao: 4000 },
         ],
         
         // Falas para indiceAtual = 11----------------------------------------------------------
         [
-            { fala: falas[18], inicio: 6000, duracao: 4000 },
-            { fala: falas[19], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[20], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[20], inicio: 6000, duracao: 4000 },
             { fala: falas[21], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[22], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[23], inicio: 1000, duracao: 3500 }, 
         ],
 
         // Falas para indiceAtual = 12----------------------------------------------------------
         [
-            { fala: falas[22], inicio: 6000, duracao: 4000 },
+            { fala: falas[24], inicio: 6000, duracao: 4000 },
         ],
         
         [],
 
         // Falas para indiceAtual = 13----------------------------------------------------------
         [
-            { fala: falas[23], inicio: 6000, duracao: 4000 },
+            { fala: falas[25], inicio: 6000, duracao: 4000 },
         ],
         
         // Falas para indiceAtual = 14----------------------------------------------------------
-        [
-            { fala: falas[24], inicio: 6000, duracao: 4000 },
-            { fala: falas[25], inicio: 1000, duracao: 3500 }, 
-        ],
-        
-        // Falas para indiceAtual = 15----------------------------------------------------------
         [
             { fala: falas[26], inicio: 6000, duracao: 4000 },
             { fala: falas[27], inicio: 1000, duracao: 3500 }, 
         ],
         
-        // Falas para indiceAtual = 16----------------------------------------------------------
+        // Falas para indiceAtual = 15----------------------------------------------------------
         [
             { fala: falas[28], inicio: 6000, duracao: 4000 },
             { fala: falas[29], inicio: 1000, duracao: 3500 }, 
-            { fala: falas[30], inicio: 1000, duracao: 3500 }, 
+        ],
+        
+        // Falas para indiceAtual = 16----------------------------------------------------------
+        [
+            { fala: falas[30], inicio: 6000, duracao: 4000 },
+            { fala: falas[31], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[32], inicio: 1000, duracao: 3500 }, 
         ],
 
     // Falas para indiceAtual = 17----------------------------------------------------------
     [
-        { fala: falas[31], inicio: 6000, duracao: 4000 },
+        { fala: falas[33], inicio: 6000, duracao: 4000 },
     ],
      
     // Falas para indiceAtual = 18----------------------------------------------------------
@@ -1474,7 +1476,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Valor de indiceAtual:", indiceAtual);
         console.log("Número de elementos em falas:", falas.length);
     
-        if (indiceAtual >= 2 && indiceAtual <= 5 && !falaExibida[indiceAtual]) { // Verifica se o índice está no intervalo e se a fala ainda não foi exibida
+        if (indiceAtual >= 2 && indiceAtual <= 18 && !falaExibida[indiceAtual]) { // Verifica se o índice está no intervalo e se a fala ainda não foi exibida
             console.log(`indiceAtual é ${indiceAtual}.`);
             clearInterval(intervalID); // Pausa o loop de verificação
     
