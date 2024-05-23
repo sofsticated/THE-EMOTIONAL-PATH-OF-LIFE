@@ -1320,28 +1320,125 @@ document.addEventListener('DOMContentLoaded', function () {
     intervalID = setInterval(verificarIndiceEExibirFalas, 1000);*/
 
     let intervalID; // Variável para armazenar o ID do intervalo
-    let falaExibida = [false, false, false, false, false, false]; // Flags para controlar se a fala já foi exibida para cada índice
+    let falaExibida = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]; // Flags para controlar se a fala já foi exibida para cada índice
     
     // Array de arrays de objetos de falas, cada objeto contém a fala, tempo de início e tempo de desaparecimento
     let falasPorIndice = [
         [],
+       
         [],
+
+        // Falas para indiceAtual = 2----------------------------------------------------------
         [
-            { fala: falas[0], inicio: 1000, duracao: 2000 }, // Fala 0 para indiceAtual = 2
-            { fala: falas[1], inicio: 4000, duracao: 2500 }  // Fala 1 para indiceAtual = 2
+            { fala: falas[0], inicio: 1000, duracao: 2000 }, 
+            { fala: falas[1], inicio: 4000, duracao: 2600 }, 
         ],
+
+        // Falas para indiceAtual = 3---------------------------------------------------------- 
         [
-            { fala: falas[2], inicio: 2000, duracao: 2500 }  // Fala 2 para indiceAtual = 3
+            { fala: falas[2], inicio: 1000, duracao: 2500 },  // Fala 2 para indiceAtual = 3
+            { fala: falas[3], inicio: 3000, duracao: 3000 }, 
         ],
+
+        // Falas para indiceAtual = 4----------------------------------------------------------
         [
-            { fala: falas[3], inicio: 3000, duracao: 3000 }, // Fala 3 para indiceAtual = 4
-            { fala: falas[4], inicio: 6000, duracao: 4000 }, // Fala 4 para indiceAtual = 4
-            { fala: falas[5], inicio: 1000, duracao: 3500 }  // Fala 5 para indiceAtual = 4
+            { fala: falas[4], inicio: 6000, duracao: 4000 },
+            { fala: falas[5], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[6], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[7], inicio: 1000, duracao: 3500 }, 
         ],
+
+        // Falas para indiceAtual = 5----------------------------------------------------------
         [
-            { fala: falas[6], inicio: 5000, duracao: 4000 }  // Fala 6 para indiceAtual = 5
-        ]
-    ];
+            { fala: falas[8], inicio: 5000, duracao: 4000 },  // Fala 6 para indiceAtual = 5
+            { fala: falas[9], inicio: 1000, duracao: 3500 }, 
+        ],
+
+        // Falas para indiceAtual = 6----------------------------------------------------------
+        [
+            { fala: falas[10], inicio: 6000, duracao: 4000 },
+            { fala: falas[11], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[12], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[13], inicio: 1000, duracao: 3500 }, 
+            
+        ],
+        
+        // Falas para indiceAtual = 7----------------------------------------------------------
+        [
+            { fala: falas[14], inicio: 6000, duracao: 4000 },
+            { fala: falas[15], inicio: 1000, duracao: 3500 }, 
+        ],
+        
+        // Falas para indiceAtual = 8----------------------------------------------------------
+        [
+            { fala: falas[16], inicio: 6000, duracao: 4000 },
+        ],
+
+        [],
+
+
+        // Falas para indiceAtual = 10----------------------------------------------------------
+        [
+            { fala: falas[17], inicio: 6000, duracao: 4000 },
+        ],
+        
+        // Falas para indiceAtual = 11----------------------------------------------------------
+        [
+            { fala: falas[18], inicio: 6000, duracao: 4000 },
+            { fala: falas[19], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[20], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[21], inicio: 1000, duracao: 3500 }, 
+        ],
+
+        // Falas para indiceAtual = 12----------------------------------------------------------
+        [
+            { fala: falas[22], inicio: 6000, duracao: 4000 },
+        ],
+        
+        [],
+
+        // Falas para indiceAtual = 13----------------------------------------------------------
+        [
+            { fala: falas[23], inicio: 6000, duracao: 4000 },
+        ],
+        
+        // Falas para indiceAtual = 14----------------------------------------------------------
+        [
+            { fala: falas[24], inicio: 6000, duracao: 4000 },
+            { fala: falas[25], inicio: 1000, duracao: 3500 }, 
+        ],
+        
+        // Falas para indiceAtual = 15----------------------------------------------------------
+        [
+            { fala: falas[26], inicio: 6000, duracao: 4000 },
+            { fala: falas[27], inicio: 1000, duracao: 3500 }, 
+        ],
+        
+        // Falas para indiceAtual = 16----------------------------------------------------------
+        [
+            { fala: falas[28], inicio: 6000, duracao: 4000 },
+            { fala: falas[29], inicio: 1000, duracao: 3500 }, 
+            { fala: falas[30], inicio: 1000, duracao: 3500 }, 
+        ],
+
+    // Falas para indiceAtual = 17----------------------------------------------------------
+    [
+        { fala: falas[31], inicio: 6000, duracao: 4000 },
+    ],
+     
+    // Falas para indiceAtual = 18----------------------------------------------------------
+    [
+        { fala: falas[32], inicio: 6000, duracao: 4000 },
+        { fala: falas[33], inicio: 1000, duracao: 3500 }, 
+        { fala: falas[34], inicio: 1000, duracao: 3500 }, 
+        { fala: falas[35], inicio: 1000, duracao: 3500 }, 
+        { fala: falas[36], inicio: 1000, duracao: 3500 }, 
+        { fala: falas[37], inicio: 1000, duracao: 3500 }, 
+        { fala: falas[38], inicio: 1000, duracao: 3500 }, 
+
+    ]
+];
+
     
     function exibirFalaComDelay(falaObj, index, indiceAtual) {
         let { fala, inicio, duracao } = falaObj;
