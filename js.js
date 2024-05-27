@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
 for (let i = 0; i < 1; i++) {
     const ambiente = new Audio();
     ambiente.id = 'ambienteS';
-    ambiente.src = "/ambiente/Ambiente" + i +".mp3";
+    ambiente.src = 'ambiente/amb' + i +'.mp3';
     ambiente.style.display = 'none';
     slide.appendChild(ambiente);
     ambientes.push(ambiente);
