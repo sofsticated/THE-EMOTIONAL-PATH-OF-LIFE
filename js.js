@@ -1782,146 +1782,8 @@ for (let i = 0; i < 7; i++) {
     }
   });
 
-  /*let intervalID; // Variável para armazenar o ID do intervalo
-    let falaExibida = false; // Flag para controlar se a fala já foi exibida
-    
-    function verificarIndiceEExibirFalas() {
-        console.log("Função verificarIndiceEExibirFalas chamada.");
-        console.log("Valor de indiceAtual:", indiceAtual);
-        console.log("Número de elementos em falas:", falas.length);
-    
-        if (indiceAtual === 2 && !falaExibida) { // Verifica se o índice é 2 e se a fala ainda não foi exibida
-            console.log("indiceAtual é 2.");
-    
-            if (falas.length > 0) {
-                let primeiraFala = falas[0];
-                console.log("Elemento falas[0] encontrado:", primeiraFala);
-    
-                // Inicialmente, esconder todas as falas
-                falas.forEach(fala => {
-                    fala.style.display = 'none';
-                });
-    
-                // Configura a primeira fala
-                primeiraFala.style.position = 'absolute';
-                primeiraFala.style.top = '0%';
-                primeiraFala.style.left = '0%';
-                primeiraFala.style.display = 'block';
-                console.log("Estilo aplicado ao elemento falas[0].");
-    
-                setTimeout(function () {
-                    primeiraFala.classList.add('visivel');
-                    console.log("Classe 'visivel' adicionada ao elemento falas[0].");
-    
-                    // Remover fala após 2 segundos
-                    setTimeout(function () {
-                        primeiraFala.style.display = 'none';
-                        console.log("Elemento falas[0] removido do ecrã.");
-                    }, 2000);
-    
-                    falaExibida = true; // Define a flag como true após exibir a fala
-                }, 3000);
-    
-    
-            } else {
-                console.log("Não há elementos em falas.");
-            }
-        } else if (indiceAtual !== 2) { // Se o índice não for 2, redefine a flag para false
-            falaExibida = false;
-            console.log("indiceAtual não é 2. Retomando loop de verificação.");
-            clearInterval(intervalID); // Pausa o loop de verificação
-            intervalID = setInterval(verificarIndiceEExibirFalas, 1000); // Retoma o loop
-        }
-    }
-    
-    // Iniciar loop de verificação
-    intervalID = setInterval(verificarIndiceEExibirFalas, 1000);*/
+//FALAS----------------------------------------------------------------------------
 
-  let intervalID; // Variável para armazenar o ID do intervalo
-  let falaExibida = [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]; // Flags para controlar se a fala já foi exibida para cada índice
-
-  // Array de arrays de objetos de falas, cada objeto contém a fala, tempo de início e tempo de desaparecimento
-  let falasPorIndice = [
-
-    // Falas para indiceAtual = 12----------------------------------------------------------
-    [{ fala: falas[24], inicio: 6000, duracao: 4000 }],
-
-    [],
-
-    // Falas para indiceAtual = 13----------------------------------------------------------
-    [{ fala: falas[25], inicio: 6000, duracao: 4000 }],
-
-    // Falas para indiceAtual = 14----------------------------------------------------------
-    [
-      { fala: falas[26], inicio: 6000, duracao: 4000 },
-      { fala: falas[27], inicio: 1000, duracao: 3500 },
-    ],
-
-    // Falas para indiceAtual = 15----------------------------------------------------------
-    [
-      { fala: falas[28], inicio: 6000, duracao: 4000 },
-      { fala: falas[29], inicio: 1000, duracao: 3500 },
-    ],
-
-    // Falas para indiceAtual = 16----------------------------------------------------------
-    [
-      { fala: falas[30], inicio: 6000, duracao: 4000 },
-      { fala: falas[31], inicio: 1000, duracao: 3500 },
-      { fala: falas[32], inicio: 1000, duracao: 3500 },
-    ],
-
-    // Falas para indiceAtual = 17----------------------------------------------------------
-    [{ fala: falas[33], inicio: 6000, duracao: 4000 }],
-
-    // Falas para indiceAtual = 18----------------------------------------------------------
-    [
-      { fala: falas[32], inicio: 6000, duracao: 4000 },
-      { fala: falas[33], inicio: 1000, duracao: 3500 },
-      { fala: falas[34], inicio: 1000, duracao: 3500 },
-      { fala: falas[35], inicio: 1000, duracao: 3500 },
-      { fala: falas[36], inicio: 1000, duracao: 3500 },
-      { fala: falas[37], inicio: 1000, duracao: 3500 },
-      { fala: falas[38], inicio: 1000, duracao: 3500 },
-    ],
-  ];
 
   let timeouts = []; // Array para armazenar os IDs dos timeouts
 
@@ -1941,6 +1803,7 @@ for (let i = 0; i < 7; i++) {
 
     clearAllTimeouts(); // Limpa os timeouts antes de definir novos
     hideAllFalas(); // Esconde todas as falas antes de mostrar as novas
+
 
     //INDICE 2---------------------------------------------------------------------------------
     if (indiceAtual == 2) {
@@ -1979,8 +1842,8 @@ for (let i = 0; i < 7; i++) {
       ); // Fim em milissegundos
     }
 
-    //INDICE 3---------------------------------------------------------------------------------
 
+    //INDICE 3---------------------------------------------------------------------------------
     if (indiceAtual == 3) {
       timeouts.push(
         setTimeout(function () {
@@ -2016,6 +1879,7 @@ for (let i = 0; i < 7; i++) {
         }, 6000)
       ); // Fim em milissegundos
     }
+
 
       //INDICE 4---------------------------------------------------------------------------------
       if (indiceAtual == 4) {
@@ -2098,6 +1962,7 @@ for (let i = 0; i < 7; i++) {
         }, 17500));
     }
 
+
     //INDICE 5---------------------------------------------------------------------------------
     if (indiceAtual == 5) {
         timeouts.push(setTimeout(function () {
@@ -2128,7 +1993,6 @@ for (let i = 0; i < 7; i++) {
     }
 
 
-    
     //INDICE 6---------------------------------------------------------------------------------
     if (indiceAtual == 6) {
       timeouts.push(setTimeout(function () {
@@ -2185,6 +2049,7 @@ for (let i = 0; i < 7; i++) {
 
     }
 
+
     //INDICE 7---------------------------------------------------------------------------------
     if (indiceAtual == 7) {
 
@@ -2232,6 +2097,7 @@ for (let i = 0; i < 7; i++) {
         }, 2500));
     }
 
+
     //INDICE 10---------------------------------------------------------------------------------
     if (indiceAtual == 10) {
         timeouts.push(setTimeout(function () {
@@ -2247,6 +2113,7 @@ for (let i = 0; i < 7; i++) {
             falas[19].style.display = "none";
         }, 10000));
     }
+
 
     //INDICE 11---------------------------------------------------------------------------------
     if (indiceAtual == 11) {
@@ -2339,7 +2206,6 @@ for (let i = 0; i < 7; i++) {
     }
 
     
-
     //INDICE 15---------------------------------------------------------------------------------
     if (indiceAtual == 15) {
         timeouts.push(setTimeout(function () {
@@ -2369,6 +2235,7 @@ for (let i = 0; i < 7; i++) {
         }, 22000));
     }
 
+
     //INDICE 16---------------------------------------------------------------------------------
     if (indiceAtual == 16) {
        timeouts.push(setTimeout(function () {
@@ -2397,32 +2264,8 @@ for (let i = 0; i < 7; i++) {
             falas[29].style.display = "none";
         }, 10000));
 
-       /* timeouts.push(setTimeout(function () {
-            // Mostrar a imagem
-            falas[30].style.position = "absolute";
-            falas[30].style.top = "0%";
-            falas[30].style.left = "0%";
-            falas[30].style.display = "block";
-        }, 11000));
-
-        timeouts.push(setTimeout(function () {
-            // Esconder a imagem após a duração desejada
-            falas[30].style.display = "none";
-        }, 13000));
-
-        timeouts.push(setTimeout(function () {
-            // Mostrar a imagem
-            falas[31].style.position = "absolute";
-            falas[31].style.top = "0%";
-            falas[31].style.left = "0%";
-            falas[31].style.display = "block";
-        }, 16000));
-
-        timeouts.push(setTimeout(function () {
-            // Esconder a imagem após a duração desejada
-            falas[31].style.display = "none";
-        }, 20000)); */
     }
+
 
     //INDICE 17---------------------------------------------------------------------------------
     if (indiceAtual == 17) {
@@ -2505,6 +2348,7 @@ for (let i = 0; i < 7; i++) {
         }, 28000));
 
     }
+
 
     //INDICE 18---------------------------------------------------------------------------------
     if (indiceAtual == 18) {
