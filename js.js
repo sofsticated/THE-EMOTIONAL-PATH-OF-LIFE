@@ -1898,12 +1898,12 @@ document.addEventListener("DOMContentLoaded", function () {
         falas[0].style.top = "0%";
         falas[0].style.left = "0%";
         falas[0].style.display = "block";
-      }, 3000); // Tempo de início em milissegundos (3000ms = 3 segundos)
+      }, 1500); // Tempo de início em milissegundos (3000ms = 3 segundos)
 
       setTimeout(function () {
         // Esconder a imagem após a duração desejada
         falas[0].style.display = "none";
-      }, 5000); // Duração em milissegundos (5000ms = 5 segundos)
+      }, 4000); // Fim em milissegundos (5000ms = 5 segundos) (NAO É TEMPO DE DURAÇÃO, É TEMPO ONDE TERMINA, NÃO ESQUECER)
 
       setTimeout(function () {
         // Mostrar a imagem
@@ -1911,15 +1911,15 @@ document.addEventListener("DOMContentLoaded", function () {
         falas[1].style.top = "0%";
         falas[1].style.left = "0%";
         falas[1].style.display = "block";
-      }, 5000); // Tempo de início em milissegundos (3000ms = 3 segundos)
+      }, 4000); // Tempo de início em milissegundos (3000ms = 3 segundos)
 
       setTimeout(function () {
         // Esconder a imagem após a duração desejada
         falas[1].style.display = "none";
-      }, 8000); // Duração em milissegundos (5000ms = 5 segundos)
+      }, 3400); // Duração em milissegundos (5000ms = 5 segundos)
     }
 
-    //INDICE 3---------------------------------------------------------------------------------
+   /* //INDICE 3---------------------------------------------------------------------------------
     if (indiceAtual === 3) {
       setTimeout(function () {
         // Mostrar a imagem
@@ -2157,5 +2157,6 @@ document.addEventListener("DOMContentLoaded", function () {
         falas[0].style.display = "none";
       }, 5000); // Duração em milissegundos (5000ms = 5 segundos)
     }
+    */
   });
 });
