@@ -1,36 +1,39 @@
-// Tela inicial----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     const image1 = document.getElementById('image1');
     const image2 = document.getElementById('image2');
     const startButton = document.getElementById('startButton');
     const container = document.querySelector('.container');
 
-    // Função para trocar as imagens e mostrar o botão com fade in
-    function changeImageAndShowButton() {
-        image1.classList.remove('hidden');
-        image2.classList.remove('hidden');
-        startButton.classList.remove('hidden'); // Removendo a classe hidden para tornar o botão visível
-
-        // Adicionando um pequeno atraso para permitir que o navegador aplique a transição de classe
-        setTimeout(() => {
-            startButton.style.opacity = '1'; // Definindo a opacidade como 1 para aplicar o efeito de fade in
-        }, 100);
+    // Função para fazer fade-in na primeira imagem
+    function fadeInImage1() {
+        image1.style.opacity = '1';
     }
 
-    // Exibir o botão após um atraso
-    setTimeout(changeImageAndShowButton, 2000);
-
-
-
-
-
-
-
-    // BOTÃO CLICAR PARA IR PARA A EXPERIÊNCIA + FADE OUT--------------------------------------------------------------------------------------
-    startButton.addEventListener('click', function () {
-        container.classList.add('fade-out'); // Adiciona a classe para fazer a transição suave de fade out
+    // Função para trocar as imagens e mostrar o botão com fade-in
+    function changeImageAndShowButton() {
+        image1.style.opacity = '0';  // Fade-out da primeira imagem
         setTimeout(() => {
-            window.location.href = 'interacao.html'; // Redireciona para a próxima página após a transição
-        }, 1000); // Aguarda 1 segundo para garantir que a transição de fade out seja concluída
+            image1.classList.add('hidden');  // Oculta a primeira imagem após o fade-out
+            image2.style.opacity = '1';  // Fade-in da segunda imagem
+            startButton.classList.remove('hidden');  // Mostra o botão Start
+            setTimeout(() => {
+                startButton.style.opacity = '1';  // Aplica fade-in ao botão
+            }, 100);
+        }, 1000);  // Tempo de fade-out para a primeira imagem
+    }
+
+    // Exibir a primeira imagem com fade-in após a página carregar
+    setTimeout(fadeInImage1, 1000);
+
+    // Trocar para a segunda imagem após um atraso
+    setTimeout(changeImageAndShowButton, 2500);
+
+    // Botão clicável para ir para a próxima experiência com fade-out
+    startButton.addEventListener('click', function () {
+        container.style.transition = 'opacity 1s ease';
+        container.style.opacity = '0';
+        setTimeout(() => {
+            window.location.href = 'interacao.html';
+        }, 1000);
     });
 });
