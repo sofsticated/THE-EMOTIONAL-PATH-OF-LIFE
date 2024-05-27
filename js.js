@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const imagens = []; //imagens principais
-  const fundos = []; //fundos de cor
-  const elementosToupeira = []; //toupeira
-  const elementosRaposa = []; //raposa
-  const elementosCavalo = []; //cavalo
-  const cenarios = []; //cenarios imaginados
+document.addEventListener('DOMContentLoaded', function () {
+  const imagens = [];                                       //imagens principais
+  const fundos = [];                                        //fundos de cor
+  const elementosToupeira = [];                             //toupeira
+  const elementosRaposa = [];                               //raposa
+  const elementosCavalo = [];                               //cavalo
+  const cenarios = [];                                      //cenarios imaginados
   const falas = [];
 
-  const audios = []; //audios falas
-  const ambientes = []; //som ambiente
+  const audios = [];                                        //audios falas
+  const ambientes= [];                                      //som ambiente
 
-  const slide = document.getElementById("slide");
+  const slide = document.getElementById('slide');
 
   const l_imagens = window.innerWidth + 7;
   const h_imagens = window.innerHeight + 28;
@@ -21,566 +21,662 @@ document.addEventListener("DOMContentLoaded", function () {
   let contador = 0;
 
   for (let i = 1; i <= 20; i++) {
-    const imagem = new Image();
-    imagem.id = "imagem";
-    const caminhoDaImagem = "img/img_slide/frame" + i + ".png";
-    imagem.src = caminhoDaImagem;
-    imagem.style.width = l_imagens + "px";
-    imagem.style.height = h_imagens + "px";
+      const imagem = new Image();
+      imagem.id = 'imagem';
+      const caminhoDaImagem = 'img/img_slide/frame' + i + '.png';
+      imagem.src = caminhoDaImagem;
+      imagem.style.width = l_imagens + 'px';
+      imagem.style.height = h_imagens + 'px';
 
-    if (i !== 1) {
-      imagem.style.display = "none";
-    }
+      if (i !== 1) {
+          imagem.style.display = 'none';
+      }
 
-    imagens.push(imagem);
-    slide.appendChild(imagem);
+      imagens.push(imagem);
+      slide.appendChild(imagem);
   }
 
   for (let i = 0; i < 3; i++) {
-    const fundo = new Image();
-    fundo.id = "fundoCor";
-    const caminhoFundo = "img/fundo_de_cor/fundo_" + (i + 1) + ".png";
-    fundo.src = caminhoFundo;
-    fundo.style.display = "none";
-    slide.appendChild(fundo);
-    fundos.push(fundo);
+      const fundo = new Image();
+      fundo.id = 'fundoCor';
+      const caminhoFundo = 'img/fundo_de_cor/fundo_' + (i + 1) + '.png';
+      fundo.src = caminhoFundo;
+      fundo.style.display = 'none';
+      slide.appendChild(fundo);
+      fundos.push(fundo);
   }
 
   for (let i = 3; i < 21; i++) {
-    const elementot = new Image();
-    const elementor = new Image();
-    const elementoc = new Image();
-    //--------------------------------------------------------------------------------------toupeira
-    if (i <= 7) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
-    }
-    if (i == 8) {
-      elementor.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminhoElemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
-    }
-    if (i == 9) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
-    }
-    if (i == 10) {
-      elementor.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminhoElemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
+      const elementot = new Image();
+      const elementor = new Image();
+      const elementoc = new Image();
+      //--------------------------------------------------------------------------------------toupeira
+      if (i <= 7) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
+      }
+      if (i == 8) {
+          elementor.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminhoElemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
+      }
+      if (i == 9) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
+      }
+      if (i == 10) {
+          elementor.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminhoElemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
 
-      elementot.id = "elemento";
-      const caminho_Elemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminho_Elemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
-    }
-    if (i == 11) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
+          elementot.id = 'elemento';
+          const caminho_Elemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminho_Elemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
+      }
+      if (i == 11) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
 
-      elementor.id = "elemento";
-      const caminho_Elemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminho_Elemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
-    }
-    if (i == 12) {
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
-    if (i == 13) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
+          elementor.id = 'elemento';
+          const caminho_Elemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminho_Elemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
+      }
+      if (i == 12) {
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
+      if (i == 13) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
 
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
-    if (i == 14) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
+      if (i == 14) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
 
-      elementor.id = "elemento";
-      const caminho_Elemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminho_Elemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
+          elementor.id = 'elemento';
+          const caminho_Elemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminho_Elemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
 
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
-    if (i == 15) {
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
-    if (i == 16) {
-      elementor.id = "elemento";
-      const caminho_Elemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminho_Elemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
+      if (i == 15) {
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
+      if (i == 16) {
+          elementor.id = 'elemento';
+          const caminho_Elemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminho_Elemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
 
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
-    if (i >= 17) {
-      elementot.id = "elemento";
-      const caminhoElemento = "img/img_elementos/frame" + i + "_toupeira.png";
-      elementot.src = caminhoElemento;
-      elementot.style.display = "none";
-      slide.appendChild(elementot);
-      elementosToupeira.push(elementot);
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
+      if (i >= 17) {
+          elementot.id = 'elemento';
+          const caminhoElemento = 'img/img_elementos/frame' + i + '_toupeira.png';
+          elementot.src = caminhoElemento;
+          elementot.style.display = 'none';
+          slide.appendChild(elementot);
+          elementosToupeira.push(elementot);
 
-      elementor.id = "elemento";
-      const caminho_Elemento = "img/img_elementos/frame" + i + "_raposa.png";
-      elementor.src = caminho_Elemento;
-      elementor.style.display = "none";
-      slide.appendChild(elementor);
-      elementosRaposa.push(elementor);
+          elementor.id = 'elemento';
+          const caminho_Elemento = 'img/img_elementos/frame' + i + '_raposa.png';
+          elementor.src = caminho_Elemento;
+          elementor.style.display = 'none';
+          slide.appendChild(elementor);
+          elementosRaposa.push(elementor);
 
-      elementoc.id = "elemento";
-      const caminho__Elemento = "img/img_elementos/frame" + i + "_cavalo.png";
-      elementoc.src = caminho__Elemento;
-      elementoc.style.display = "none";
-      slide.appendChild(elementoc);
-      elementosCavalo.push(elementoc);
-    }
+          elementoc.id = 'elemento';
+          const caminho__Elemento = 'img/img_elementos/frame' + i + '_cavalo.png';
+          elementoc.src = caminho__Elemento;
+          elementoc.style.display = 'none';
+          slide.appendChild(elementoc);
+          elementosCavalo.push(elementoc);
+      }
   }
 
   for (let i = 1; i < 8; i++) {
-    if (i < 8) {
+      if (i < 8) {
+          const cenario = new Image();
+          cenario.id = 'cenario';
+          const caminhoCenario = 'img/desenhos/' + i + '.png';
+          cenario.src = caminhoCenario;
+          cenario.style.display = 'none';
+          slide.appendChild(cenario);
+          cenarios.push(cenario);
+      }
+  }
+
+  for (let i = 1; i < 3; i++) {
       const cenario = new Image();
-      cenario.id = "cenario";
-      const caminhoCenario = "img/desenhos/" + i + ".png";
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/8.' + i + '.png';
       cenario.src = caminhoCenario;
-      cenario.style.display = "none";
+      cenario.style.display = 'none';
       slide.appendChild(cenario);
       cenarios.push(cenario);
-    }
   }
 
   for (let i = 1; i < 3; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/8." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
-  }
-
-  for (let i = 1; i < 3; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/9." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/9.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   const cenario10 = new Image();
-  cenario10.id = "cenario";
-  const caminhoCenario10 = "img/desenhos/10.png";
+  cenario10.id = 'cenario';
+  const caminhoCenario10 = 'img/desenhos/10.png';
   cenario10.src = caminhoCenario10;
-  cenario10.style.display = "none";
+  cenario10.style.display = 'none';
   slide.appendChild(cenario10);
   cenarios.push(cenario10);
 
   for (let i = 1; i < 3; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/11." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/11.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   for (let i = 1; i < 4; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/12." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/12.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   const cenario13 = new Image();
-  cenario13.id = "cenario";
-  const caminhoCenario13 = "img/desenhos/13.png";
+  cenario13.id = 'cenario';
+  const caminhoCenario13 = 'img/desenhos/13.png';
   cenario13.src = caminhoCenario13;
-  cenario13.style.display = "none";
+  cenario13.style.display = 'none';
   slide.appendChild(cenario13);
   cenarios.push(cenario13);
 
   for (let i = 1; i < 3; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/14." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/14.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   for (let i = 1; i < 4; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/15." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/15.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   for (let i = 1; i < 4; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/16." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/16.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   for (let i = 1; i < 4; i++) {
-    const cenario = new Image();
-    cenario.id = "cenario";
-    const caminhoCenario = "img/desenhos/18." + i + ".png";
-    cenario.src = caminhoCenario;
-    cenario.style.display = "none";
-    slide.appendChild(cenario);
-    cenarios.push(cenario);
+      const cenario = new Image();
+      cenario.id = 'cenario';
+      const caminhoCenario = 'img/desenhos/18.' + i + '.png';
+      cenario.src = caminhoCenario;
+      cenario.style.display = 'none';
+      slide.appendChild(cenario);
+      cenarios.push(cenario);
   }
 
   //------------------------------------------------------------------falas
   for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 1_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 1_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 2_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 2_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 7; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 3_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 3_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
-  for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 4_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+  for (let i = 1; i < 2; i++) {
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 4_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 5; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 5_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 5_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 6_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 6_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 2; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 7_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 7_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 2; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 9_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 9_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 5; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 10_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 10_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 2; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 11_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 11_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 2; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 13_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 13_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 14_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 14_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 3; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 15_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 15_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 7; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 16_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 16_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 2; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 17_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 17_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
   for (let i = 1; i < 8; i++) {
-    const fala = new Image();
-    fala.class = "falas";
-    const caminhoFala = "img/falas/Frame 18_" + i + ".png";
-    fala.src = caminhoFala;
-    fala.style.display = "none";
-    slide.appendChild(fala);
-    falas.push(fala);
+      const fala = new Image();
+      fala.class = 'falas';
+      const caminhoFala = 'img/falas/Frame 18_' + i + '.png';
+      fala.src = caminhoFala;
+      fala.style.display = 'none';
+      slide.appendChild(fala);
+      falas.push(fala);
   }
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////// AUDIOS/SONS /////////////////////////////////////////////////////////////
-  //-------------------------------------------- Som Ambiente
-  for (let i = 0; i < 1; i++) {
-    const ambiente = new Audio();
-    ambiente.id = "ambienteS";
-    ambiente.src = "ambiente/amb" + i + ".mp3";
-    ambiente.style.display = "none";
-    slide.appendChild(ambiente);
-    ambientes.push(ambiente);
-  }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// AUDIOS/SONS /////////////////////////////////////////////////////////////
+//----------------------------------------------Barreira de 
+//----------------------------------------------Parar Som Ambiente(FUNÇÃO)
+function pararAmb() {
+  for (let i = 0; i < 7; i++) {
+      if(ambientes[i]){ambientes[i].pause();}
+      
+  }  
+}
+
+//-------------------------------------------- Som Ambiente
+for (let i = 0; i < 7; i++) {
+  const ambiente = new Audio();
+  ambiente.id = 'ambienteS';
+  ambiente.src = 'ambiente/amb' + i+ '.mp3';
+  ambiente.style.display = 'none';
+  slide.appendChild(ambiente);
+  ambientes.push(ambiente);
+}
 
   for (let i = 3; i < 21; i++) {
-    const audio = new Audio();
-    audio.id = "audio";
-    const caminhoAudio = "audios/cena" + i + ".mp3";
-    audio.src = caminhoAudio;
-    audio.style.display = "none";
-    slide.appendChild(audio);
-    audios.push(audio);
+      const audio = new Audio();
+      audio.id = 'audio';
+      const caminhoAudio = 'audios/cena' + i + '.mp3';
+      audio.src = caminhoAudio;
+      audio.style.display = 'none';
+      slide.appendChild(audio);
+      audios.push(audio);
   }
 
   const vento = new Audio();
-  vento.id = "vento";
-  const caminhoAudio0 = "efeitos/Vento_frame2.mp3";
+  vento.id = 'vento';
+  const caminhoAudio0 = 'efeitos/Vento_frame2.mp3';
   vento.src = caminhoAudio0;
-  vento.style.display = "none";
+  vento.style.display = 'none';
   slide.appendChild(vento);
 
   //-------------------------------Som Caminhar(Trocar frame)
   const andar = new Audio();
-  andar.id = "andar";
-  const caminhoAudio1 = "efeitos/Andar_neve.mp3";
+  andar.id = 'andar';
+  const caminhoAudio1 = 'efeitos/Andar_neve.mp3';
   andar.src = caminhoAudio1;
-  andar.style.display = "none";
+  andar.style.display = 'none';
   slide.appendChild(andar);
 
   //-------------------------------Som Sobre
   const sobre = new Audio();
-  sobre.id = "sobre";
-  sobre.src = "efeitos/sobre.wav";
-  sobre.style.display = "none";
+  sobre.id = 'sobre';
+  sobre.src = 'efeitos/sobre.wav';
+  sobre.style.display = 'none';
   slide.appendChild(sobre);
   //-------------------------------Audios Falas
   for (let i = 3; i < 21; i++) {
-    const audio = new Audio();
-    audio.id = "audio";
-    const caminhoAudio = "audios/cena" + i + ".mp3";
-    audio.src = caminhoAudio;
-    audio.style.display = "none";
-    slide.appendChild(audio);
-    audios.push(audio);
+      const audio = new Audio();
+      audio.id = 'audio';
+      const caminhoAudio = 'audios/cena' + i + '.mp3';
+      audio.src = caminhoAudio;
+      audio.style.display = 'none';
+      slide.appendChild(audio);
+      audios.push(audio);
   }
 
-  /*--------------*/ console.log(ambientes[0]);
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////// Interação Clique ////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// Interação Clique ////////////////////////////////////////////////////////
 
   function voltaImagemAudio() {
-    if (indiceAtual != 0) {
-      andar.play();
-      imagens[indiceAtual].style.display = "none"; // Esconde a imagem atual
-      indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length; // Atualiza o índice para a imagem anterior
-      imagens[indiceAtual].style.display = "block"; // Mostra a imagem anterior
+      
+
+      if (indiceAtual != 0) {
+          andar.play();
+          imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
+          indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length; // Atualiza o índice para a imagem anterior
+          imagens[indiceAtual].style.display = 'block'; // Mostra a imagem anterior
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
-        audios[indiceAudio].pause();
-      }
+              audios[indiceAudio].pause();
+          }
 
-      // Atualiza o índice do áudio para o áudio associado à imagem anterior
-      indiceAudio = indiceAudio - 1;
+          // Atualiza o índice do áudio para o áudio associado à imagem anterior
+          indiceAudio = indiceAudio - 1;
 
       //---------------------------------------------------------------- Falas
       if (audios[indiceAudio]) {
-        audios[indiceAudio].currentTime = 0;
-        audios[indiceAudio].play();
+              audios[indiceAudio].currentTime = 0;
+              audios[indiceAudio].play();
+          }
+
+       //---------------------------------------------------------------- Som Ambiente
+       if (indiceAudio==1) {
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      } else if(indiceAudio==3){
+          pararAmb();
+          ambientes[1].currentTime = 0;
+          ambientes[1].play();
+
+      } else if(indiceAudio==5){
+          pararAmb();
+          ambientes[2].currentTime = 0;
+          ambientes[2].play();
+      } else if(indiceAudio==7){
+          pararAmb();
+          ambientes[3].currentTime = 0;
+          ambientes[3].play();
+      } else if(indiceAudio==11){
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      } else if(indiceAudio==12){
+          pararAmb();
+          ambientes[4].currentTime = 0;
+          ambientes[4].play();
+      }else if(indiceAudio==13){
+          pararAmb();
+          ambientes[5].currentTime = 0;
+          ambientes[5].play();
+      }else if(indiceAudio==14){
+          pararAmb();
+          ambientes[6].currentTime = 0;
+          ambientes[6].play();
+      } else if(indiceAudio==15){
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      }else if(indiceAudio==16){
+          pararAmb();
+          ambientes[2].currentTime = 0;
+          ambientes[2].play();
       }
-    } else {
-      indiceAtual = 0; // Se já estiver na primeira imagem, mantenha o índice atual como 0
-    }
+      } else {
+          indiceAtual = 0; // Se já estiver na primeira imagem, mantenha o índice atual como 0
+      }
   }
 
   function proximaImagemAudio() {
-    if (indiceAtual != 0) {
-      andar.play();
-    }
-    imagens[indiceAtual].style.display = "none"; // Esconde a imagem atual
-    indiceAtual = (indiceAtual + 1) % imagens.length; // Atualiza o índice para a próxima imagem
-    imagens[indiceAtual].style.display = "block"; // Mostra a próxima imagem
-    console.log(indiceAtual);
+      if (indiceAtual != 0) {
+          andar.play();
+      }
+      imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
+      indiceAtual = (indiceAtual + 1) % imagens.length; // Atualiza o índice para a próxima imagem
+      imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
+      //console.log(indiceAtual);
 
-    //---------------------------------------------------------------- Control de pausa de sons
-    if (audios[indiceAudio]) {
-      audios[indiceAudio].pause();
-    }
+      //---------------------------------------------------------------- Control de pausa de sons
+      if (audios[indiceAudio]) {
+          audios[indiceAudio].pause();
+      }
+     
 
-    // Atualiza o índice do áudio para o áudio associado à próxima imagem
-    indiceAudio = indiceAudio + 1;
+      // ---------------------------------------------------------------- Controlador de Audios/barreira
+      indiceAudio = indiceAudio + 1;
+      if(indiceAudio ==18){indiceAudio=-2;pararAmb();}
 
-    //---------------------------------------------------------------- Falas
-    if (audios[indiceAudio]) {
-      audios[indiceAudio].currentTime = 0;
-      audios[indiceAudio].play();
-    }
-    //---------------------------------------------------------------- Som Ambiente
-    if (indiceAudio >= 1) {
-      ambientes[0].currentTime = 0;
-      ambientes[0].play();
-      console.log("entrou amb");
-    }
+      //---------------------------------------------------------------- Falas
+      if (audios[indiceAudio]) {
+          audios[indiceAudio].currentTime = 0;
+          audios[indiceAudio].play();
+
+      }
+        //---------------------------------------------------------------- Som Ambiente
+        if (indiceAudio==0) {
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      } else if(indiceAudio==2){
+          pararAmb();
+          ambientes[1].currentTime = 0;
+          ambientes[1].play();
+
+      } else if(indiceAudio==4){
+          pararAmb();
+          ambientes[2].currentTime = 0;
+          ambientes[2].play();
+      } else if(indiceAudio==6){
+          pararAmb();
+          ambientes[3].currentTime = 0;
+          ambientes[3].play();
+      } else if(indiceAudio==8){
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      } else if(indiceAudio==12){
+          pararAmb();
+          ambientes[4].currentTime = 0;
+          ambientes[4].play();
+      }else if(indiceAudio==13){
+          pararAmb();
+          ambientes[5].currentTime = 0;
+          ambientes[5].play();
+      }else if(indiceAudio==14){
+          pararAmb();
+          ambientes[6].currentTime = 0;
+          ambientes[6].play();
+      } else if(indiceAudio==15){
+          pararAmb();
+          ambientes[0].currentTime = 0;
+          ambientes[0].play();
+      }else if(indiceAudio==16){
+          pararAmb();
+          ambientes[2].currentTime = 0;
+          ambientes[2].play();
+      }
   }
+
 
   slide.addEventListener("click", function (event) {
     if (event.clientX <= window.innerWidth / 6) {
