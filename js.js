@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const cenarios = [];                                      //cenarios imaginados
     const falas = [];
 
-    const audios = [];                                        //audios
+    const audios = [];                                        //audios falas
+    const ambientes= [];                                      //som ambiente
 
     const slide = document.getElementById('slide');
 
     const l_imagens = window.innerWidth + 7;
     const h_imagens = window.innerHeight + 28;
+    //---------------------------------------------------------------Contadores
 
     let indiceAtual = 0;
     let indiceAudio = -2;
@@ -464,6 +466,18 @@ document.addEventListener('DOMContentLoaded', function () {
         falas.push(fala);
     }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// AUDIOS/SONS /////////////////////////////////////////////////////////////
+//-------------------------------------------- Som Ambiente
+for (let i = 0; i < 1; i++) {
+    const ambiente = new Audio();
+    ambiente.id = 'ambienteS';
+    ambiente.src = 'ambiente/amb' + i +'.mp3';
+    ambiente.style.display = 'none';
+    slide.appendChild(ambiente);
+    ambientes.push(ambiente);
+}
 
     for (let i = 3; i < 21; i++) {
         const audio = new Audio();
@@ -507,26 +521,37 @@ document.addEventListener('DOMContentLoaded', function () {
         audios.push(audio);
     }
 
+                                                  /*--------------*/console.log(ambientes[0]);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// Interação Clique ////////////////////////////////////////////////////////
+
     function voltaImagemAudio() {
+        
+
         if (indiceAtual != 0) {
             andar.play();
             imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
             indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length; // Atualiza o índice para a imagem anterior
             imagens[indiceAtual].style.display = 'block'; // Mostra a imagem anterior
 
-            // Pausa o áudio atual, se existir
-            if (audios[indiceAudio]) {
+        //---------------------------------------------------------------- Control de pausa de sons
+        if (audios[indiceAudio]) {
                 audios[indiceAudio].pause();
             }
 
             // Atualiza o índice do áudio para o áudio associado à imagem anterior
             indiceAudio = indiceAudio - 1;
 
-            // Toca o áudio associado à imagem anterior, se existir
-            if (audios[indiceAudio]) {
+        //---------------------------------------------------------------- Falas
+        if (audios[indiceAudio]) {
                 audios[indiceAudio].currentTime = 0;
                 audios[indiceAudio].play();
             }
+
+      
         } else {
             indiceAtual = 0; // Se já estiver na primeira imagem, mantenha o índice atual como 0
         }
@@ -541,19 +566,28 @@ document.addEventListener('DOMContentLoaded', function () {
         imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
         console.log(indiceAtual);
 
-        // Pausa o áudio anterior, se existir
+        //---------------------------------------------------------------- Control de pausa de sons
         if (audios[indiceAudio]) {
             audios[indiceAudio].pause();
         }
+       
 
         // Atualiza o índice do áudio para o áudio associado à próxima imagem
         indiceAudio = indiceAudio + 1;
 
-        // Toca o áudio associado à próxima imagem, se existir
+        //---------------------------------------------------------------- Falas
         if (audios[indiceAudio]) {
             audios[indiceAudio].currentTime = 0;
             audios[indiceAudio].play();
+
         }
+          //---------------------------------------------------------------- Som Ambiente
+          if (indiceAudio>=1) {
+            ambientes[0].currentTime = 0;
+            ambientes[0].play();
+           console.log("entrou amb");
+        }
+
     }
 
 
