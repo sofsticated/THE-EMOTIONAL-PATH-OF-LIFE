@@ -1916,7 +1916,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         // Esconder a imagem após a duração desejada
         falas[1].style.display = "none";
-      }, 3400); // Duração em milissegundos (5000ms = 5 segundos)
+      }, 7000); // Duração em milissegundos (5000ms = 5 segundos)
     }
 
    /* //INDICE 3---------------------------------------------------------------------------------
