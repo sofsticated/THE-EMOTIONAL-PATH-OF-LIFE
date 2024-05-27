@@ -1784,15 +1784,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Array de arrays de objetos de falas, cada objeto contém a fala, tempo de início e tempo de desaparecimento
   let falasPorIndice = [
-    [],
-
-    [],
-
-    // Falas para indiceAtual = 2----------------------------------------------------------
-    [
-      { fala: falas[0], inicio: 1500, duracao: 2000 },
-      { fala: falas[1], inicio: 4000, duracao: 3400 },
-    ],
+  
 
     // Falas para indiceAtual = 3----------------------------------------------------------
     [
@@ -1888,53 +1880,85 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
   ];
 
+  let timeouts = []; // Array para armazenar os IDs dos timeouts
+
   slide.addEventListener("click", function (event) {
-    //INDICE 2---------------------------------------------------------------------------------
-    if (indiceAtual === 2) {
-      // Lógica para mostrar a imagem com um tempo de início e duração
-      setTimeout(function () {
-        // Mostrar a imagem
-        falas[0].style.position = "absolute";
-        falas[0].style.top = "0%";
-        falas[0].style.left = "0%";
-        falas[0].style.display = "block";
-      }, 1500); // Tempo de início em milissegundos (3000ms = 3 segundos)
+  
+      // Função para limpar todos os timeouts pendentes
+      function clearAllTimeouts() {
+          timeouts.forEach(clearTimeout);
+          timeouts = [];
+      }
+  
+      // Função para esconder todas as falas
+      function hideAllFalas() {
+          falas.forEach(fala => {
+              fala.style.display = "none";
+          });
+      }
+  
+      clearAllTimeouts(); // Limpa os timeouts antes de definir novos
+      hideAllFalas(); // Esconde todas as falas antes de mostrar as novas
+  
+      //INDICE 2---------------------------------------------------------------------------------
+      if (indiceAtual == 2) {
+          timeouts.push(setTimeout(function () {
+              // Mostrar a imagem
+              falas[0].style.position = "absolute";
+              falas[0].style.top = "0%";
+              falas[0].style.left = "0%";
+              falas[0].style.display = "block";
+          }, 1700)); // Tempo de início em milissegundos
+  
+          timeouts.push(setTimeout(function () {
+              // Esconder a imagem após a duração desejada
+              falas[0].style.display = "none";
+          }, 3700)); // Fim em milissegundos
+  
+          timeouts.push(setTimeout(function () {
+              // Mostrar a imagem
+              falas[1].style.position = "absolute";
+              falas[1].style.top = "0%";
+              falas[1].style.left = "0%";
+              falas[1].style.display = "block";
+          }, 4000)); // Tempo de início em milissegundos
+  
+          timeouts.push(setTimeout(function () {
+              // Esconder a imagem após a duração desejada
+              falas[1].style.display = "none";
+          }, 8400)); // Fim em milissegundos
+      }
+  
+      //INDICE 3---------------------------------------------------------------------------------
 
-      setTimeout(function () {
-        // Esconder a imagem após a duração desejada
-        falas[0].style.display = "none";
-      }, 4000); // Fim em milissegundos (5000ms = 5 segundos) (NAO É TEMPO DE DURAÇÃO, É TEMPO ONDE TERMINA, NÃO ESQUECER)
+      if (indiceAtual == 3) {
+          timeouts.push(setTimeout(function () {
+              // Mostrar a imagem
+              falas[2].style.position = "absolute";
+              falas[2].style.top = "0%";
+              falas[2].style.left = "0%";
+              falas[2].style.display = "block";
+          }, 700)); // Tempo de início em milissegundos
+  
+          timeouts.push(setTimeout(function () {
+              // Esconder a imagem após a duração desejada
+              falas[2].style.display = "none";
+          }, 3200)); // Fim em milissegundos
 
-      setTimeout(function () {
-        // Mostrar a imagem
-        falas[1].style.position = "absolute";
-        falas[1].style.top = "0%";
-        falas[1].style.left = "0%";
-        falas[1].style.display = "block";
-      }, 4000); // Tempo de início em milissegundos (3000ms = 3 segundos)
+          timeouts.push(setTimeout(function () {
+            // Mostrar a imagem
+            falas[3].style.position = "absolute";
+            falas[3].style.top = "0%";
+            falas[3].style.left = "0%";
+            falas[3].style.display = "block";
+        }, 4000)); // Tempo de início em milissegundos
 
-      setTimeout(function () {
-        // Esconder a imagem após a duração desejada
-        falas[1].style.display = "none";
-      }, 7000); // Duração em milissegundos (5000ms = 5 segundos)
-    }
-
-   /* //INDICE 3---------------------------------------------------------------------------------
-    if (indiceAtual === 3) {
-      setTimeout(function () {
-        // Mostrar a imagem
-        falas[0].style.position = "absolute";
-        falas[0].style.top = "0%";
-        falas[0].style.left = "0%";
-        falas[0].style.display = "block";
-      }, 3000); // Tempo de início em milissegundos (3000ms = 3 segundos)
-
-      setTimeout(function () {
-        // Esconder a imagem após a duração desejada
-        falas[0].style.display = "none";
-      }, 5000); // Duração em milissegundos (5000ms = 5 segundos)
-    }
-
+        timeouts.push(setTimeout(function () {
+            // Esconder a imagem após a duração desejada
+            falas[3].style.display = "none";
+        }, 6000)); // Fim em milissegundos
+      }
+    /*
     //INDICE 4---------------------------------------------------------------------------------
     if (indiceAtual === 4) {
       setTimeout(function () {
