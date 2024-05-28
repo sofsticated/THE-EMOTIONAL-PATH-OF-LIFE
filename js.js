@@ -2462,4 +2462,41 @@ for (let i = 0; i < 7; i++) {
 
     }
   });
+
+
+
+
+ /* const backbutton = document.getElementById('backbutton');
+
+let currentSlide = 0;
+
+// Função para trocar as imagens e mostrar o botão com fade-in no último slide
+function showButton() {
+    slides[currentSlide].style.opacity = '0';  // Fade-out do slide atual
+    setTimeout(() => {
+        slides[currentSlide].classList.add('hidden');  // Oculta o slide atual após o fade-out
+        currentSlide++;
+        if (currentSlide < slides.length) {
+            slides[currentSlide].classList.remove('hidden');
+            slides[currentSlide].style.opacity = '1';  // Fade-in do próximo slide
+        }
+        if (currentSlide === slides.length - 1) {
+            setTimeout(() => {
+                backbutton.classList.remove('hidden');  // Mostra o botão Back
+                backbutton.style.opacity = '1';  // Aplica fade-in ao botão
+            }, 100);
+        }
+    }, 1000);  // Tempo de fade-out para o slide atual
+}
+
+// Botão clicável para ir para a homepage com fade-out
+backbutton.addEventListener('click', function () {
+    container.style.transition = 'opacity 1s ease';
+    container.style.opacity = '0';
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 1000);
+});
+
+    */
 });
