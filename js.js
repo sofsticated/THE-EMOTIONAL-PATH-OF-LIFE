@@ -608,7 +608,7 @@ for (let i = 0; i < 7; i++) {
   }
 
   function proximaImagemAudio() {
-      if (indiceAtual != 0) {
+      if (indiceAtual != 0 && indiceAtual != 20) {
           andar.play();
       }
       if (indiceAtual<=19){
@@ -616,7 +616,7 @@ for (let i = 0; i < 7; i++) {
       indiceAtual = (indiceAtual + 1); // Atualiza o índice para a próxima imagem
       imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
       console.log(indiceAtual);
-    }
+   
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
@@ -678,6 +678,7 @@ for (let i = 0; i < 7; i++) {
           ambientes[2].play();
       }
   }
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
