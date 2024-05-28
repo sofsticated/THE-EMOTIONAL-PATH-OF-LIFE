@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const cenarios = [];                                      //cenarios imaginados
   const falas = [];
 
+  var clique=false;                                       //Controlador de evento clique
+  var falasRep=true;                                      //Controlador de falas aparição
+
   const audios = [];                                        //audios falas
   const ambientes= [];                                      //som ambiente
 
@@ -544,7 +547,9 @@ for (let i = 0; i < 7; i++) {
           imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
           indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length; // Atualiza o índice para a imagem anterior
           imagens[indiceAtual].style.display = 'block'; // Mostra a imagem anterior
-
+          clique=false;// controlador de clique
+          falasRep=true;// controlador de falas aparição
+          console.log(clique);
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
               audios[indiceAudio].pause();
@@ -615,8 +620,10 @@ for (let i = 0; i < 7; i++) {
       imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
       indiceAtual = (indiceAtual + 1); // Atualiza o índice para a próxima imagem
       imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
+      clique=false;// controlador de clique
+      falasRep=true;// controlador de falas aparição
       console.log(indiceAtual);
-   
+      console.log(clique);
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
@@ -705,7 +712,7 @@ for (let i = 0; i < 7; i++) {
         cenarios[i].style.display = "none";
       }
     }
-
+if(clique){
     if (
       indiceAtual == 2 &&
       event.clientX <= 590 &&
@@ -1229,7 +1236,8 @@ for (let i = 0; i < 7; i++) {
         contador = 0;
       }
     }
-  });
+  }
+});
 
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1816,10 +1824,11 @@ for (let i = 0; i < 7; i++) {
       });
     }
 
+    if(falasRep){
     clearAllTimeouts(); // Limpa os timeouts antes de definir novos
     hideAllFalas(); // Esconde todas as falas antes de mostrar as novas
 
-
+   
     //INDICE 2---------------------------------------------------------------------------------
     if (indiceAtual == 2) {
       timeouts.push(
@@ -1853,6 +1862,7 @@ for (let i = 0; i < 7; i++) {
         setTimeout(function () {
           // Esconder a imagem após a duração desejada
           falas[1].style.display = "none";
+          clique=true;
         }, 8400)
       ); // Fim em milissegundos
     }
@@ -1891,6 +1901,7 @@ for (let i = 0; i < 7; i++) {
         setTimeout(function () {
           // Esconder a imagem após a duração desejada
           falas[3].style.display = "none";
+          clique=true;
         }, 6000)
       ); // Fim em milissegundos
     }
@@ -1974,6 +1985,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[9].style.display = "none";
+            clique=true;
         }, 17500));
     }
 
@@ -2004,6 +2016,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[11].style.display = "none";
+            clique=true;
         }, 11000));
     }
 
@@ -2060,6 +2073,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[15].style.display = "none";
+            clique=true;
         }, 26500));
 
     }
@@ -2092,6 +2106,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[17].style.display = "none";
+            clique=true;
         }, 16500));
     }
 
@@ -2109,6 +2124,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[18].style.display = "none";
+            clique=true;
         }, 2500));
     }
 
@@ -2126,6 +2142,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[19].style.display = "none";
+            clique=true;
         }, 10000));
     }
 
@@ -2183,6 +2200,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[23].style.display = "none";
+            clique=true;
         }, 14500));
     }
 
@@ -2200,6 +2218,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[24].style.display = "none";
+            clique=true;
         }, 6000));
     }
 
@@ -2217,6 +2236,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[25].style.display = "none";
+            clique=true;
         }, 7000));
     }
 
@@ -2247,6 +2267,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[27].style.display = "none";
+            clique=true;
         }, 22000));
     }
 
@@ -2277,6 +2298,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[29].style.display = "none";
+            clique=true;
         }, 10000));
 
     }
@@ -2360,6 +2382,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[35].style.display = "none";
+            clique=true;
         }, 28000));
 
     }
@@ -2378,6 +2401,7 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[36].style.display = "none";
+            clique=true;
         }, 6000));
 
     }
@@ -2473,45 +2497,12 @@ for (let i = 0; i < 7; i++) {
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[43].style.display = "none";
+            clique=true;
         }, 27000));
 
     }
+  }
+    falasRep=false;
   });
 
-
-
-
- /* const backbutton = document.getElementById('backbutton');
-
-let currentSlide = 0;
-
-// Função para trocar as imagens e mostrar o botão com fade-in no último slide
-function showButton() {
-    slides[currentSlide].style.opacity = '0';  // Fade-out do slide atual
-    setTimeout(() => {
-        slides[currentSlide].classList.add('hidden');  // Oculta o slide atual após o fade-out
-        currentSlide++;
-        if (currentSlide < slides.length) {
-            slides[currentSlide].classList.remove('hidden');
-            slides[currentSlide].style.opacity = '1';  // Fade-in do próximo slide
-        }
-        if (currentSlide === slides.length - 1) {
-            setTimeout(() => {
-                backbutton.classList.remove('hidden');  // Mostra o botão Back
-                backbutton.style.opacity = '1';  // Aplica fade-in ao botão
-            }, 100);
-        }
-    }, 1000);  // Tempo de fade-out para o slide atual
-}
-
-// Botão clicável para ir para a homepage com fade-out
-backbutton.addEventListener('click', function () {
-    container.style.transition = 'opacity 1s ease';
-    container.style.opacity = '0';
-    setTimeout(() => {
-        window.location.href = 'index.html';
-    }, 1000);
-});
-
-    */
 });
