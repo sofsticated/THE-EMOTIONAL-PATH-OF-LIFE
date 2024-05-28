@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const audios = [];                                        //audios falas
   const ambientes= [];                                      //som ambiente
+  
 
   const slide = document.getElementById('slide');
 
   const l_imagens = window.innerWidth + 7;
   const h_imagens = window.innerHeight + 28;
+
+
+
   //---------------------------------------------------------------Contadores
 
   let indiceAtual = 0;
@@ -472,7 +476,19 @@ document.addEventListener('DOMContentLoaded', function () {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// AUDIOS/SONS /////////////////////////////////////////////////////////////
-//----------------------------------------------Barreira de 
+//--------------------------------------------- Musica
+const musica= new Audio();                                
+musica.src = 'ambiente/musica.mp3';
+musica.style.display = 'none';
+//Se a musica chegar ao fim
+musica.addEventListener('ended', function() {
+  musica.currentTime = 0; //tempo
+  musica.play();
+});
+
+musica.play();              
+
+
 //----------------------------------------------Parar Som Ambiente(FUNÇÃO)
 function pararAmb() {
   for (let i = 0; i < 7; i++) {
@@ -480,6 +496,7 @@ function pararAmb() {
       
   }  
 }
+
 
 //-------------------------------------------- Som Ambiente
 for (let i = 0; i < 7; i++) {
@@ -531,7 +548,14 @@ for (let i = 0; i < 7; i++) {
       audio.style.display = 'none';
       slide.appendChild(audio);
       audios.push(audio);
+      audios[1].volume=0.555;
+
   }
+
+//--------------------------------------------- Volumes             
+musica.volume=0.255;
+vento.volume=0.5;
+ambientes[6].volume=0.4
 
 
 
@@ -639,7 +663,7 @@ for (let i = 0; i < 7; i++) {
 
       // ---------------------------------------------------------------- Controlador de Audios/barreira
       indiceAudio = indiceAudio + 1;
-      if(indiceAudio ==18){indiceAudio=-2;pararAmb();}
+      if(indiceAudio ==20){indiceAudio=-2;pararAmb();}
 
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
       if(indiceAtual==9 || indiceAtual==13){

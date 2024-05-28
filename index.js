@@ -37,3 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     });
 });
+
+const musica= new Audio();                                //musica de fundo
+musica.id='musica';
+musica.src = 'ambiente/musica.mp3';
+musica.style.display = 'none';
+musica.play();                           
+musica.volume=1;
+
