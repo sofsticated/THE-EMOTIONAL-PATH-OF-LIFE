@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
       falas.push(fala);
   }
 
-  for (let i = 1; i < 2; i++) {
+  for (let i = 1; i < 3; i++) {
       const fala = new Image();
       fala.class = 'falas';
       const caminhoFala = 'img/falas/Frame 4_' + i + '.png';
