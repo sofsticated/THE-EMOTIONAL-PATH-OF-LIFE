@@ -549,7 +549,8 @@ for (let i = 0; i < 7; i++) {
           imagens[indiceAtual].style.display = 'block'; // Mostra a imagem anterior
           clique=false;// controlador de clique
           falasRep=true;// controlador de falas aparição
-          console.log(clique);
+          contador = 0;//Reseta
+          //console.log(clique);
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
               audios[indiceAudio].pause();
@@ -557,7 +558,10 @@ for (let i = 0; i < 7; i++) {
 
           // Atualiza o índice do áudio para o áudio associado à imagem anterior
           indiceAudio = indiceAudio - 1;
-
+    //---------------------------------------------------------------- Controlador de click em frmes sem audio
+    if(indiceAtual==9 || indiceAtual==13){
+      clique=true;
+      }
       //---------------------------------------------------------------- Falas
       if (audios[indiceAudio]) {
               audios[indiceAudio].currentTime = 0;
@@ -622,9 +626,11 @@ for (let i = 0; i < 7; i++) {
       imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
       clique=false;// controlador de clique
       falasRep=true;// controlador de falas aparição
+      contador = 0;//Reseta
       console.log(indiceAtual);
-      console.log(clique);
+      //console.log(clique);
 
+     
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
           audios[indiceAudio].pause();
@@ -634,6 +640,12 @@ for (let i = 0; i < 7; i++) {
       // ---------------------------------------------------------------- Controlador de Audios/barreira
       indiceAudio = indiceAudio + 1;
       if(indiceAudio ==18){indiceAudio=-2;pararAmb();}
+
+      //---------------------------------------------------------------- Controlador de click em frmes sem audio
+      if(indiceAtual==9 || indiceAtual==13){
+      clique=true;
+      console.log(clique);
+      }
 
       //---------------------------------------------------------------- Falas
       if (audios[indiceAudio]) {
@@ -718,7 +730,7 @@ if(clique){
       event.clientX <= 590 &&
       event.clientX >= 490 &&
       event.clientY >= 430 &&
-      event.clientY <= 550
+      event.clientY <= 550 
     ) {
       contador++;
       if (contador == 1) {
@@ -852,6 +864,7 @@ if(clique){
         cenarios[7].style.top = "0";
         cenarios[7].style.left = "0";
         cenarios[7].style.display = "block";
+        cenarios[8].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[7].style.display = "none";
@@ -870,6 +883,7 @@ if(clique){
         cenarios[8].style.top = "0";
         cenarios[8].style.left = "0";
         cenarios[8].style.display = "block";
+        cenarios[7].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[8].style.display = "none";
@@ -888,6 +902,7 @@ if(clique){
         cenarios[9].style.top = "0";
         cenarios[9].style.left = "0";
         cenarios[9].style.display = "block";
+        cenarios[10].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[9].style.display = "none";
@@ -906,6 +921,7 @@ if(clique){
         cenarios[10].style.top = "0";
         cenarios[10].style.left = "0";
         cenarios[10].style.display = "block";
+        cenarios[9].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[10].style.display = "none";
@@ -942,6 +958,7 @@ if(clique){
         cenarios[12].style.top = "0";
         cenarios[12].style.left = "0";
         cenarios[12].style.display = "block";
+        cenarios[13].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[12].style.display = "none";
@@ -960,6 +977,7 @@ if(clique){
         cenarios[13].style.top = "0";
         cenarios[13].style.left = "0";
         cenarios[13].style.display = "block";
+        cenarios[12].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[13].style.display = "none";
@@ -978,6 +996,8 @@ if(clique){
         cenarios[14].style.top = "0";
         cenarios[14].style.left = "0";
         cenarios[14].style.display = "block";
+        cenarios[15].style.display = "none";
+        cenarios[16].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[14].style.display = "none";
@@ -996,6 +1016,8 @@ if(clique){
         cenarios[15].style.top = "0";
         cenarios[15].style.left = "0";
         cenarios[15].style.display = "block";
+        cenarios[14].style.display = "none";
+        cenarios[16].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[15].style.display = "none";
@@ -1014,6 +1036,8 @@ if(clique){
         cenarios[16].style.top = "0";
         cenarios[16].style.left = "0";
         cenarios[16].style.display = "block";
+        cenarios[14].style.display = "none";
+        cenarios[15].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[16].style.display = "none";
@@ -1050,6 +1074,7 @@ if(clique){
         cenarios[18].style.top = "0";
         cenarios[18].style.left = "0";
         cenarios[18].style.display = "block";
+        cenarios[19].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[18].style.display = "none";
@@ -1068,6 +1093,7 @@ if(clique){
         cenarios[19].style.top = "0";
         cenarios[19].style.left = "0";
         cenarios[19].style.display = "block";
+        cenarios[18].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[19].style.display = "none";
@@ -1086,6 +1112,8 @@ if(clique){
         cenarios[20].style.top = "0";
         cenarios[20].style.left = "0";
         cenarios[20].style.display = "block";
+        cenarios[21].style.display = "none";
+        cenarios[22].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[20].style.display = "none";
@@ -1104,6 +1132,8 @@ if(clique){
         cenarios[21].style.top = "0";
         cenarios[21].style.left = "0";
         cenarios[21].style.display = "block";
+        cenarios[20].style.display = "none";
+        cenarios[22].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[21].style.display = "none";
@@ -1122,6 +1152,8 @@ if(clique){
         cenarios[22].style.top = "0";
         cenarios[22].style.left = "0";
         cenarios[22].style.display = "block";
+        cenarios[20].style.display = "none";
+        cenarios[21].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[22].style.display = "none";
@@ -1140,6 +1172,8 @@ if(clique){
         cenarios[23].style.top = "0";
         cenarios[23].style.left = "0";
         cenarios[23].style.display = "block";
+        cenarios[24].style.display = "none";
+        cenarios[25].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[23].style.display = "none";
@@ -1158,6 +1192,8 @@ if(clique){
         cenarios[24].style.top = "0";
         cenarios[24].style.left = "0";
         cenarios[24].style.display = "block";
+        cenarios[23].style.display = "none";
+        cenarios[25].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[24].style.display = "none";
@@ -1176,6 +1212,8 @@ if(clique){
         cenarios[25].style.top = "0";
         cenarios[25].style.left = "0";
         cenarios[25].style.display = "block";
+        cenarios[23].style.display = "none";
+        cenarios[24].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[25].style.display = "none";
@@ -1194,6 +1232,8 @@ if(clique){
         cenarios[26].style.top = "0";
         cenarios[26].style.left = "0";
         cenarios[26].style.display = "block";
+        cenarios[27].style.display = "none";
+        cenarios[28].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[26].style.display = "none";
@@ -1212,6 +1252,8 @@ if(clique){
         cenarios[27].style.top = "0";
         cenarios[27].style.left = "0";
         cenarios[27].style.display = "block";
+        cenarios[26].style.display = "none";
+        cenarios[28].style.display = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[27].style.display = "none";
@@ -1230,6 +1272,8 @@ if(clique){
         cenarios[28].style.top = "0";
         cenarios[28].style.left = "0";
         cenarios[28].style.display = "block";
+        cenarios[26].style.display  = "none";
+        cenarios[27].style.display  = "none";
         sobre.play();
       } else if (contador == 2) {
         cenarios[28].style.display = "none";
@@ -2408,6 +2452,7 @@ if(clique){
 
     //INDICE 19---------------------------------------------------------------------------------
     if (indiceAtual == 19) {
+      console.log("ENTROU 19");
         timeouts.push(setTimeout(function () {
             // Mostrar a imagem
             falas[37].style.position = "absolute";
@@ -2419,6 +2464,7 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[37].style.display = "none";
+            console.log("ENTROU 19.1");
         }, 4500));
 
         timeouts.push(setTimeout(function () {
@@ -2427,6 +2473,7 @@ if(clique){
             falas[38].style.top = "0%";
             falas[38].style.left = "0%";
             falas[38].style.display = "block";
+            console.log("ENTROU 19.2");
         }, 5000));
 
         timeouts.push(setTimeout(function () {
@@ -2445,6 +2492,7 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[39].style.display = "none";
+            console.log("ENTROU 19.3");
         }, 10000));
 
         timeouts.push(setTimeout(function () {
@@ -2458,6 +2506,7 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[40].style.display = "none";
+            console.log("ENTROU 19.4");
         }, 13000));
 
         timeouts.push(setTimeout(function () {
@@ -2471,6 +2520,7 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[41].style.display = "none";
+            console.log("ENTROU 19.5");
         }, 18500));
 
         timeouts.push(setTimeout(function () {
@@ -2484,6 +2534,8 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[42].style.display = "none";
+            clique=true;
+            console.log("ENTROU 19.6");
         }, 21000));
 
         timeouts.push(setTimeout(function () {
@@ -2497,7 +2549,7 @@ if(clique){
         timeouts.push(setTimeout(function () {
             // Esconder a imagem após a duração desejada
             falas[43].style.display = "none";
-            clique=true;
+            console.log("ENTROU 19.7");
         }, 27000));
 
     }
