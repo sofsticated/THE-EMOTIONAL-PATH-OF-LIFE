@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let indiceAudio = -2;
   let contador = 0;
 
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= 21; i++) {
       const imagem = new Image();
       imagem.id = 'imagem';
       const caminhoDaImagem = 'img/img_slide/frame' + i + '.png';
@@ -611,10 +611,12 @@ for (let i = 0; i < 7; i++) {
       if (indiceAtual != 0) {
           andar.play();
       }
+      if (indiceAtual<=19){
       imagens[indiceAtual].style.display = 'none'; // Esconde a imagem atual
-      indiceAtual = (indiceAtual + 1) % imagens.length; // Atualiza o índice para a próxima imagem
+      indiceAtual = (indiceAtual + 1); // Atualiza o índice para a próxima imagem
       imagens[indiceAtual].style.display = 'block'; // Mostra a próxima imagem
-      //console.log(indiceAtual);
+      console.log(indiceAtual);
+    }
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
