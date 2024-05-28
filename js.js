@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const elementosCavalo = [];                               //cavalo
   const cenarios = [];                                      //cenarios imaginados
   const falas = [];
+  var info_animais = [];
 
   var clique=false;                                       //Controlador de evento clique
   var falasRep=true;                                      //Controlador de falas aparição
@@ -203,7 +204,17 @@ document.addEventListener('DOMContentLoaded', function () {
           elementosCavalo.push(elementoc);
       }
   }
-
+  //-------------------------------------------------------------------Informação animais
+  for(let i = 0; i < 3; i++) {
+    const info = new Image();
+          info.id = 'info';
+          const caminhoinfo = 'img/img_texto/texto' + (i+1) + '.png';
+          info.src = caminhoinfo;
+          info.style.display = 'none';
+          slide.appendChild(info);
+          info_animais.push(info);
+  }
+//----------------------------------------------------------------------Imagens Imaginação
   for (let i = 1; i < 8; i++) {
       if (i < 8) {
           const cenario = new Image();
@@ -1313,7 +1324,41 @@ if(clique){
 /////////////////////////////////////////////// EVENTO DE HOUVER ////////////////////////////////////////////////////////
 
   document.addEventListener("mousemove", function (event) {
-    if (
+    if(
+      indiceAtual == 1 &&
+      event.clientX <= 590 &&
+      event.clientX >= 490 &&
+      event.clientY >= 430 &&
+      event.clientY <= 550
+    ){
+      info_animais[0].style.position = "absolute";
+      info_animais[0].style.top = "0";
+      info_animaisrios[0].style.left = "0";
+      info_animais[0].style.display = "block";
+    }else if(
+      indiceAtual == 1 &&
+      event.clientX <= 590 &&
+      event.clientX >= 490 &&
+      event.clientY >= 430 &&
+      event.clientY <= 550
+    ){
+      info_animais[1].style.position = "absolute";
+      info_animais[1].style.top = "0";
+      info_animaisrios[1].style.left = "0";
+      info_animais[1].style.display = "block";
+    }else if(
+      indiceAtual == 1 &&
+      event.clientX <= 590 &&
+      event.clientX >= 490 &&
+      event.clientY >= 430 &&
+      event.clientY <= 550
+    ){
+      info_animais[2].style.position = "absolute";
+      info_animais[2].style.top = "0";
+      info_animaisrios[2].style.left = "0";
+      info_animais[2].style.display = "block";
+
+     } else if (
       indiceAtual == 2 &&
       event.clientX <= 590 &&
       event.clientX >= 490 &&
