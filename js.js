@@ -673,7 +673,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // ---------------------------------------------------------------- Controlador de Audios/barreira
       indiceAudio = indiceAudio + 1;
-      if (indiceAudio == 20) { indiceAudio = -2; pararAmb(); }
+    
 
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
       if (indiceAtual == 9 || indiceAtual == 13) {
