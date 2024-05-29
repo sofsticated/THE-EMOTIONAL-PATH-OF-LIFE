@@ -1332,10 +1332,12 @@ document.addEventListener('DOMContentLoaded', function () {
   slide.addEventListener('click', function () {
     if (indiceAtual == 20) {
       setTimeout(showButton, 2000);
+    } else {
+      menuButton.classList.add('hidden');
     }
   });
 
-  menuButton.addEventListener('click', function () {
+  slide.addEventListener('click', function () {
     botaoMenu.style.transition = 'opacity 1s ease';
     botaoMenu.style.opacity = '0';
 
