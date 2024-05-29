@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const audios = [];                                        //audios falas
   const ambientes = [];                                      //som ambiente
 
+  const menuButton = document.getElementById('menuButton');        //botao menu
+  const botaoMenu = document.querySelector('.botaoMenu');
 
   const slide = document.getElementById('slide');
 
@@ -1318,6 +1320,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  function showButton() {
+    setTimeout(() => {
+      menuButton.classList.remove('hidden');
+      setTimeout(() => {
+        menuButton.style.opacity = '1';
+      }, 100);
+    }, 1000);
+  }
+
+  slide.addEventListener('click', function () {
+    if (indiceAtual == 20) {
+      setTimeout(showButton, 2000);
+    }
+  });
+
+  menuButton.addEventListener('click', function () {
+    botaoMenu.style.transition = 'opacity 1s ease';
+    botaoMenu.style.opacity = '0';
+
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1000);
+  });
+
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1333,7 +1359,7 @@ document.addEventListener('DOMContentLoaded', function () {
       info_animais[0].style.left = 0 + "%";
       info_animais[0].style.display = "block";
 
-    } else if (indiceAtual == 1 && event.clientX >= 600 && event.clientX <= 1000 && event.clientY >= 250 && event.clientY <= 550 ) {
+    } else if (indiceAtual == 1 && event.clientX >= 600 && event.clientX <= 1000 && event.clientY >= 250 && event.clientY <= 550) {
       info_animais[1].style.width = ((window.innerWidth + 7) * 1914) / 1912 + "px";
       info_animais[1].style.height = ((window.innerHeight + 28) * 865) / 863 + "px";
       info_animais[1].style.position = "absolute";
@@ -1904,7 +1930,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elementosCavalo[i].style.display = "none";
       }
 
-      for(let i = 0; i<info_animais.length; i++){
+      for (let i = 0; i < info_animais.length; i++) {
         info_animais[i].style.display = "none";
       }
     }
