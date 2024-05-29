@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const audios = [];                                        //audios falas
   const ambientes = [];                                      //som ambiente
 
-  const menuButton = document.getElementById('menuButton');        //botao menu
-  const botaoMenu = document.querySelector('.botaoMenu');
-
   const slide = document.getElementById('slide');
 
   const l_imagens = window.innerWidth + 7;
@@ -1316,36 +1313,18 @@ document.addEventListener('DOMContentLoaded', function () {
           cenarios[28].style.display = "none";
           contador = 0;
         }
-      }
+      } 
     }
   });
-
-  function showButton() {
-    setTimeout(() => {
-      menuButton.classList.remove('hidden');
-      setTimeout(() => {
-        menuButton.style.opacity = '1';
-      }, 100);
-    }, 1000);
-  }
-
-  slide.addEventListener('click', function () {
-    if (indiceAtual == 20) {
-      setTimeout(showButton, 2000);
-    } else {
-      menuButton.classList.add('hidden');
-    }
-  });
-
-  slide.addEventListener('click', function () {
-    botaoMenu.style.transition = 'opacity 1s ease';
-    botaoMenu.style.opacity = '0';
-
-    setTimeout(() => {
-      window.location.href = 'index.html';
-    }, 1000);
-  });
-
+  
+  slide.addEventListener('click', function (event) {
+  if (indiceAtual > 19 && event.clientX >= 5*window.innerWidth/6 &&
+        event.clientX <= window.innerWidth &&
+        event.clientY >= 0 &&
+        event.clientY <= window.innerHeight){
+          window.location.href = 'index.html';
+        }
+      });
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
