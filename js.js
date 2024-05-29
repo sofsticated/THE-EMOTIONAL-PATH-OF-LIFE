@@ -1316,6 +1316,8 @@ document.addEventListener('DOMContentLoaded', function () {
       } 
     }
   });
+
+  //---------------------------------------------------------------------------FRAME FINAL
   
   slide.addEventListener('click', function (event) {
   if (indiceAtual > 20 && event.clientX >= 5*window.innerWidth/6 &&
