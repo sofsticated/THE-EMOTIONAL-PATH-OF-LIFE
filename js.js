@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (audios[indiceAudio]) {
         audios[indiceAudio].pause();
       }
-
+     
       // Atualiza o índice do áudio para o áudio associado à imagem anterior
       indiceAudio = indiceAudio - 1;
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
@@ -661,9 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clique = false;// controlador de clique
       falasRep = true;// controlador de falas aparição
       contador = 0;//Reseta
-      console.log(indiceAtual);
-      //console.log(clique);
-
+     
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
@@ -673,16 +671,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // ---------------------------------------------------------------- Controlador de Audios/barreira
       indiceAudio = indiceAudio + 1;
-    
+     if(indiceAudio==18)indiceAudio==18;
+       console.log(indiceAudio);
 
+
+   
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
       if (indiceAtual == 9 || indiceAtual == 13) {
         clique = true;
-        console.log(clique);
       }
 
       //---------------------------------------------------------------- Falas
-      if (audios[indiceAudio]) {
+      if (audios[indiceAudio] && indiceAudio<18) {
         audios[indiceAudio].currentTime = 0;
         audios[indiceAudio].play();
 
@@ -1318,7 +1318,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   slide.addEventListener('click', function (event) {
-  if (indiceAtual > 19 && event.clientX >= 5*window.innerWidth/6 &&
+  if (indiceAtual > 20 && event.clientX >= 5*window.innerWidth/6 &&
         event.clientX <= window.innerWidth &&
         event.clientY >= 0 &&
         event.clientY <= window.innerHeight){
