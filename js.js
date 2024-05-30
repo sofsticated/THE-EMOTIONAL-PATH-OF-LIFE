@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (audios[indiceAudio]) {
         audios[indiceAudio].pause();
       }
-     
+
       // Atualiza o índice do áudio para o áudio associado à imagem anterior
       indiceAudio = indiceAudio - 1;
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
       clique = false;// controlador de clique
       falasRep = true;// controlador de falas aparição
       contador = 0;//Reseta
-     
+
 
       //---------------------------------------------------------------- Control de pausa de sons
       if (audios[indiceAudio]) {
@@ -671,18 +671,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // ---------------------------------------------------------------- Controlador de Audios/barreira
       indiceAudio = indiceAudio + 1;
-     if(indiceAudio==18)indiceAudio==18;
-       console.log(indiceAudio);
+      if (indiceAudio == 18) indiceAudio == 18;
+      console.log(indiceAudio);
 
 
-   
+
       //---------------------------------------------------------------- Controlador de click em frmes sem audio
       if (indiceAtual == 9 || indiceAtual == 13) {
         clique = true;
       }
 
       //---------------------------------------------------------------- Falas
-      if (audios[indiceAudio] && indiceAudio<18) {
+      if (audios[indiceAudio] && indiceAudio < 18) {
         audios[indiceAudio].currentTime = 0;
         audios[indiceAudio].play();
 
@@ -730,6 +730,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ambientes[2].currentTime = 0;
         ambientes[2].play();
       }
+    } else if (indiceAtual == 20) {
+      window.location.href = 'index.html';
     }
   }
 
@@ -1313,20 +1315,15 @@ document.addEventListener('DOMContentLoaded', function () {
           cenarios[28].style.display = "none";
           contador = 0;
         }
-      } 
+      }
     }
   });
 
   //---------------------------------------------------------------------------FRAME FINAL
-  
+
   slide.addEventListener('click', function (event) {
-  if (indiceAtual > 20 && event.clientX >= 5*window.innerWidth/6 &&
-        event.clientX <= window.innerWidth &&
-        event.clientY >= 0 &&
-        event.clientY <= window.innerHeight){
-          window.location.href = 'index.html';
-        }
-      });
+    console.log("indiceAtual: " + indiceAtual);
+  });
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2627,5 +2624,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     falasRep = false;
   });
- 
+
 });
